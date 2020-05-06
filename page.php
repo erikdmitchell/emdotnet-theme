@@ -5,7 +5,7 @@
 		<div class="row">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<div class="col-md-12">
-					<?php koksijde_theme_post_thumbnail(); ?>
+					<?php emdotnet_theme_post_thumbnail(); ?>
 
 					<header class="entry-header">
 						<?php
@@ -49,7 +49,7 @@
 				</article><!-- #post-## -->
 				<!-- // Previous/next post navigation. NEEDS TO BE ADDED -->
 			<?php endwhile; else: ?>
-				<p><?php _e('Sorry, this page does not exist.','wpbootstrap'); ?></p>
+				<p><?php _e('Sorry, this page does not exist.','emdotnet'); ?></p>
 			<?php endif; ?>
 		</div>
 		<div class="col-md-4 sidebar">
@@ -58,4 +58,4 @@
 	</div>
 </div><!-- .container -->
 
-<?php get_footer(); ?>
+<?php get_footer();

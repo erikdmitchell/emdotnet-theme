@@ -3,8 +3,8 @@
  * The template for displaying attachments
  *
  * @package WordPress
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
  */
 ?>
 <?php get_header(); ?>
@@ -20,9 +20,9 @@
 					<div class="entry-meta">
 						<?php
 						if ( 'post' == get_post_type() )
-							koksijde_theme_posted_on();
+							emdotnet_theme_posted_on();
 
-						edit_post_link( __( 'Edit', 'koksijde' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span>', '</span>' );
+						edit_post_link( __( 'Edit', 'emdotnet' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span>', '</span>' );
 						?>
 					</div><!-- .entry-meta -->
 				</header><!-- .entry-header -->

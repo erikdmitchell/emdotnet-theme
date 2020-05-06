@@ -22,15 +22,15 @@
 			<div class="container">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".koksijde-mobile-menu">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".emdotnet-mobile-menu">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<?php koksijde_theme_navbar_brand(); ?>
+						<?php emdotnet_theme_navbar_brand(); ?>
 					</div>
-					<?php koksijde_secondary_navigation_setup(); ?>
+					<?php emdotnet_secondary_navigation_setup(); ?>
 					<div class="collapse navbar-collapse primary-menu">
 						<?php
 						wp_nav_menu(array(
@@ -42,7 +42,7 @@
 						));
 						?>
 					</div> <!-- .primary-menu -->
-					<?php koksijde_mobile_navigation_setup(); ?>
+					<?php emdotnet_mobile_navigation_setup(); ?>
 				</nav>
 			</div><!-- .container -->
 		</div><!-- .navigation -->

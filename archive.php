@@ -6,8 +6,8 @@
  * For example, puts together date-based pages if no date.php file exists.
  *
  * @package WordPress
- * @subpackage koksijde
- * @since koksijde 1.0.0
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
  */
 ?>
 <?php get_header(); ?>
@@ -19,13 +19,13 @@
 				<header class="archive-header">
 					<h1 class="archive-title"><?php
 						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'koksijde' ), get_the_date() );
+							printf( __( 'Daily Archives: %s', 'emdotnet' ), get_the_date() );
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'koksijde' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'koksijde' ) ) );
+							printf( __( 'Monthly Archives: %s', 'emdotnet' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'emdotnet' ) ) );
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'koksijde' ), get_the_date( _x( 'Y', 'yearly archives date format', 'koksijde' ) ) );
+							printf( __( 'Yearly Archives: %s', 'emdotnet' ), get_the_date( _x( 'Y', 'yearly archives date format', 'emdotnet' ) ) );
 						else :
-							_e( 'Archives', 'koksijde' );
+							_e( 'Archives', 'emdotnet' );
 						endif;
 					?></h1>
 				</header><!-- .archive-header -->
@@ -34,7 +34,7 @@
 					<?php get_template_part('content'); ?>
 				<?php endwhile; ?>
 
-				<?php koksijde_theme_paging_nav(); // Previous/next post navigation. ?>
+				<?php emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
 
 			<?php else : ?>
 				<?php get_template_part( 'content', 'none' ); ?>

@@ -1,10 +1,10 @@
 <?php
 /**
- * koksijdeThemeOptions class.
+ * emdotnetThemeOptions class.
  *
  * @since 1.0.0
  */
-class koksijdeThemeOptions {
+class emdotnetThemeOptions {
 
 	public $version='0.0.1';
 
@@ -18,10 +18,10 @@ class koksijdeThemeOptions {
 	}
 
 	public function admin_scripts_styles($hook) {
-		if ($hook!='appearance_page_koksijde_options')
+		if ($hook!='appearance_page_emdotnet_options')
 			return;
 
-		wp_enqueue_style('koksijde-options-style',THEME_ADMIN_URL.'/css/admin-theme-options.css');
+		wp_enqueue_style('emdotnet-options-style',THEME_ADMIN_URL.'/css/admin-theme-options.css');
 	}
 
 	/**
@@ -31,23 +31,23 @@ class koksijdeThemeOptions {
 	 * @return void
 	 */
 	function add_theme_page() {
-    	add_theme_page('Theme Options','Theme Options','edit_theme_options','koksijde_options',array($this,'koksijde_theme_options'));
+    	add_theme_page('Theme Options','Theme Options','edit_theme_options','emdotnet_options',array($this,'emdotnet_theme_options'));
 	}
 
 	/**
-	 * koksijde_theme_options function.
+	 * emdotnet_theme_options function.
 	 *
 	 * @access public
 	 * @return void
 	 */
-	public function koksijde_theme_options() {
-		global $koksijde_theme_options_tabs, $koksijde_theme_options_hooks, $koksijde_theme_options;
+	public function emdotnet_theme_options() {
+		global $emdotnet_theme_options_tabs, $emdotnet_theme_options_hooks, $emdotnet_theme_options;
 
 		$html=null;
 		$classes=null;
 		$active_tab=isset($_GET['tab']) ? $_GET['tab'] : 'default';
 
-		do_action('koksijde_theme_options_init');
+		do_action('emdotnet_theme_options_init');
 
 		echo '<div class="wrap">';
 			echo '<h1>MDW Theme Options</h1>';
@@ -66,13 +66,13 @@ class koksijdeThemeOptions {
 	 * @return void
 	 */
 	public function display_admin_tabs($active_tab='default') {
-		global $koksijde_theme_options_tabs;
+		global $emdotnet_theme_options_tabs;
 
-		if (empty($koksijde_theme_options_tabs))
+		if (empty($emdotnet_theme_options_tabs))
 			return false;
 
 		// sort tabs by order //
-		uasort($koksijde_theme_options_tabs, function ($a, $b) {
+		uasort($emdotnet_theme_options_tabs, function ($a, $b) {
 			if (function_exists('bccomp')) :
 				return bccomp($a['order'], $b['order']);
 			else :
@@ -82,14 +82,14 @@ class koksijdeThemeOptions {
 
 		// output tabs //
 		echo '<h2 class="nav-tabs">';
-			foreach ($koksijde_theme_options_tabs as $slug => $tab) :
+			foreach ($emdotnet_theme_options_tabs as $slug => $tab) :
 				if ($active_tab==$slug) :
 					$classes='nav-tab-active';
 				else :
 					$classes=null;
 				endif;
 
-				echo '<a href="?page=koksijde_options&tab='.$slug.'" class="nav-tab '.$classes.'">'.$tab['name'].'</a>';
+				echo '<a href="?page=emdotnet_options&tab='.$slug.'" class="nav-tab '.$classes.'">'.$tab['name'].'</a>';
 			endforeach;
 		echo '</h2>';
 	}
@@ -102,21 +102,21 @@ class koksijdeThemeOptions {
 	 * @return void
 	 */
 	public function display_admin_content($active_tab='default') {
-		global $koksijde_theme_options_hooks, $koksijde_theme_options_tabs;
+		global $emdotnet_theme_options_hooks, $emdotnet_theme_options_tabs;
 
 		// bail if no hooks found //
-		if (empty($koksijde_theme_options_hooks))
+		if (empty($emdotnet_theme_options_hooks))
 			return false;
 
 		// cycle through hooks to display correct one //
-		foreach ($koksijde_theme_options_hooks as $tag => $active) :
+		foreach ($emdotnet_theme_options_hooks as $tag => $active) :
 			$tag_arr=explode('-',$tag);
 			$id=array_pop($tag_arr);
 
 			// apply our hook //
 			if ($active_tab==$id) :
-				echo '<div class="koksijde-theme-options-content">';
-					do_action($tag, $koksijde_theme_options_tabs[$id]['function']);
+				echo '<div class="emdotnet-theme-options-content">';
+					do_action($tag, $emdotnet_theme_options_tabs[$id]['function']);
 				echo '</div>';
 			endif;
 		endforeach;
@@ -129,19 +129,19 @@ class koksijdeThemeOptions {
 	 * @return void
 	 */
 	public function setup_options() {
-		global $koksijde_theme_options;
+		global $emdotnet_theme_options;
 
-		$options=$koksijde_theme_options;
+		$options=$emdotnet_theme_options;
 		$stored_options=array();
 
-		if (isset($koksijde_theme_options['option_name']))
-			$stored_options=get_option($koksijde_theme_options['option_name']);
+		if (isset($emdotnet_theme_options['option_name']))
+			$stored_options=get_option($emdotnet_theme_options['option_name']);
 
 		if ($stored_options)
-	 		$koksijde_theme_options=koksijde_wp_parse_args($stored_options,$koksijde_theme_options); // append stored options
+	 		$emdotnet_theme_options=emdotnet_wp_parse_args($stored_options,$emdotnet_theme_options); // append stored options
 	}
 
 }
 
-new koksijdeThemeOptions();
+new emdotnetThemeOptions();
 ?>
