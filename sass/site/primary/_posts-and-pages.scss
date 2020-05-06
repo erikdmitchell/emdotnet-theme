@@ -21,3 +21,75 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+/* tools i use */
+.tools-i-use {
+	background: #eee;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 15px 0;
+}
+.tools-i-use .tools-block {
+	text-align: center;
+}
+.tools-i-use .tools-block .fa {
+	font-size: 65px;
+}
+
+/**
+ * about on home
+ */
+.home-about .image {
+	float: left;
+	margin: 0 15px 5px 0;
+}
+.home-about .image img {
+	max-width: 300px;
+}
+
+/** about page
+---------------*/
+.term-list {
+	list-style-type: none;
+	padding: 0 0 0 20px;
+	margin: 0 0 10px 0;
+}
+.term-skills h3 {
+	margin-top: 0;
+}
+
+/** portfolio page
+-------------------*/
+.filter-wrapper .filter li.active,
+.filter-wrapper .filter li.active a {
+	background: #ed564b;
+}
+.filter-wrapper a:link,
+.filter-wrapper a:visited {
+	color: #6f7779;
+}
+.filter-wrapper a:hover,
+.filter-wrapper a:active {
+	color: #ed564b;
+}
+/* port single */
+.single-portfolio .post-thumbnail {
+	margin-bottom: 20px;
+}
+
+/**
+ * plugins page
+**/
+article.plugin {
+	overflow: hidden;
+}
+article.plugin a {
+	color: #ed564b;
+}
+article.plugin a:hover {
+	text-decoration: underline;
+}
+article.plugin img {
+	float: left;
+	margin: 0 10px 5px 0;
+}
