@@ -77,16 +77,6 @@ function emdotnet_theme_setup() {
 	include_once(get_template_directory().'/inc/admin/init.php');
 
 	/**
-	 * include bootstrap nav walker
-	 */
-	include_once(get_template_directory().'/inc/wp_bootstrap_navwalker.php');
-
-	/**
-	 * include bootstrap mobile nav walker
-	 */
-	include_once(get_template_directory().'/inc/mobile_nav_walker.php');
-
-	/**
 	 * include theme slider class
 	 */
 	include_once(get_template_directory().'/inc/slider.php');
@@ -171,9 +161,8 @@ add_action('widgets_init','emdotnet_theme_widgets_init');
 function emdotnet_theme_scripts() {
 	global $wp_scripts;
 
-	// enqueue our scripts for bootstrap, slider and theme
+	// enqueue our scripts for slider and theme
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrap',get_template_directory_uri().'/inc/js/bootstrap.min.js',array('jquery'),'3.3.2',true);
 	wp_enqueue_script('jquery-actual-script',get_template_directory_uri().'/inc/js/jquery.actual.min.js',array('jquery'),'1.0.16',true);
 	wp_enqueue_script('emdotnet-theme-script',get_template_directory_uri().'/inc/js/emdotnet-theme.js',array('jquery'),'1.2.0',true);
 
@@ -202,8 +191,6 @@ function emdotnet_theme_scripts() {
 	wp_enqueue_script('edm-theme-script',get_stylesheet_directory_uri().'/js/theme.js',array('jquery','jquery-equalheights-min-script'),'1.0.0',false);
 
 	wp_enqueue_style('parent-style', get_template_directory_uri().'/style.css');
-
-	//wp_enqueue_style('font-awesome-style','//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',array(),'4.3.0');
 
 	if (is_front_page()) {
 		wp_enqueue_script('edm-theme-front-page-script',get_stylesheet_directory_uri().'/js/front-page.js');
@@ -454,8 +441,8 @@ function emdotnet_mobile_navigation_setup() {
 			'container_id' => 'accordion',
 			'echo' => false,
 			//'items_wrap'=>'%3$s',
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new emdotnetMobileNavWalker()
+			//'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			//'walker' => new emdotnetMobileNavWalker()
 		));
 
 	$html.='</div><!-- .emdotnet-theme-mobile-menu -->';
@@ -483,8 +470,8 @@ function emdotnet_secondary_navigation_setup() {
 			'container' => false,
 			'menu_class' => 'nav navbar-nav pull-right secondary',
 			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new wp_bootstrap_navwalker()
+			//'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			//'walker' => new wp_bootstrap_navwalker()
 		));
 	$html.='</div> <!-- .secondary-menu -->';
 
