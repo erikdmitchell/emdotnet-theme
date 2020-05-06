@@ -1,0 +1,79 @@
+/* projects */
+.home-feature {
+	margin: 15px 0;
+}
+.home-feature .project-wrap {
+	padding: 0;
+}
+.home-feature .project {
+
+}
+
+.home-feature .project img {
+
+}
+.home-feature .project a {
+	color: #fff;
+}
+.home-feature .project h3 {
+	font-size: 18px;
+	text-align: center;
+	margin: 0;
+}
+.home-feature .project .title {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(58, 58, 58, 0.70);
+	width: 100%;
+	height: 100%;
+}
+.home-feature .project .title h3 {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* portfolio (project) single
+------------------------------ */
+
+
+.project-details {
+
+}
+.project-details a {
+	color: #ed564b;
+}
+.project-details a:hover {
+	text-decoration: underline;
+}
+h3.project-details-title {
+	margin-top: 0;
+}
+.project-details-list {
+	list-style-type: none;
+	margin: 0;
+}
+.project-details-list > li {
+
+}
+.project-details-list > li > .header {
+	font-weight: bold;
+}
+.project-details > .skills,
+.project-details > .services {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+}
+.projects .entry-content,
+.project-details {
+	margin-top: 20px;
+}
+.post-navigation {
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
+}
+.post-navigation .meta-nav {
+	display: none;
+}
