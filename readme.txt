@@ -1,4 +1,4 @@
-=== koksijde ===
+=== emdotnet ===
 Contributors: Erik Mitchell
 Tags: white, light, responsive-layout, featured-images, custom-menu, theme-options, translation-ready
 Requires at least: 3.5
@@ -17,7 +17,7 @@ We recommend you create a child theme of this theme for further customizations a
 
 == Installation ==
 
-1. Upload `koksijde` to the `/wp-content/theme/` directory
+1. Upload `emdotnet` to the `/wp-content/theme/` directory
 2. Activate the theme through the 'Themes' (Appearance) menu in WordPress
 
 == Frequently Asked Questions ==

@@ -30,87 +30,87 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /**
  * modify the default "panel" styling for our mobile menu
  */
-.koksijde-theme-mobile-menu ul {
+.emdotnet-theme-mobile-menu ul {
   margin: 0; }
 
-.koksijde-theme-mobile-menu .panel {
+.emdotnet-theme-mobile-menu .panel {
   border: none;
   box-shadow: none;
   overflow: hidden; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children > :first-child {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children > :first-child {
   border-top: none; }
 
-.koksijde-theme-mobile-menu .panel-default > .panel-heading {
+.emdotnet-theme-mobile-menu .panel-default > .panel-heading {
   background-image: none;
   color: #777;
   border-bottom: 1px solid #fff; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading {
   padding: 0; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading .panel-title a {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading .panel-title a {
   display: block;
   padding: 10px 15px; }
 
-.koksijde-theme-mobile-menu .panel-default > .panel-heading + .panel-collapse > .panel-body {
+.emdotnet-theme-mobile-menu .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top: none; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title a,
-.koksijde-theme-mobile-menu .panel-default .panel-collapse .panel-title a {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title a,
+.emdotnet-theme-mobile-menu .panel-default .panel-collapse .panel-title a {
   color: #777; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children {
   overflow: hidden; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title .item-title {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title .item-title {
   float: left;
   width: 85.8%; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-collapse .panel-title .item-title {
+.emdotnet-theme-mobile-menu .panel-default .panel-collapse .panel-title .item-title {
   float: left;
   width: 84.8%; }
 
-.koksijde-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title .item-icon,
-.koksijde-theme-mobile-menu .panel-default .panel-collapse .panel-title .item-icon {
+.emdotnet-theme-mobile-menu .panel-default .panel-heading.menu-item-has-children .panel-title .item-icon,
+.emdotnet-theme-mobile-menu .panel-default .panel-collapse .panel-title .item-icon {
   float: right;
   border-left: 1px solid #fff; }
 
-.koksijde-theme-mobile-menu .panel-default > .panel-heading + .panel-collapse > .panel-body {
+.emdotnet-theme-mobile-menu .panel-default > .panel-heading + .panel-collapse > .panel-body {
   padding: 15px; }
 
-.koksijde-theme-mobile-menu .panel-group .panel + .panel {
+.emdotnet-theme-mobile-menu .panel-group .panel + .panel {
   margin-top: 0; }
 
-.koksijde-theme-mobile-menu .panel-group {
+.emdotnet-theme-mobile-menu .panel-group {
   margin-top: 0;
   margin-bottom: 0;
   border: 1px solid #ccc;
   border-width: 1px 0; }
 
-.koksijde-theme-mobile-menu .panel-group.navbar-nav {
+.emdotnet-theme-mobile-menu .panel-group.navbar-nav {
   border-width: 0; }
 
-.koksijde-theme-mobile-menu .panel-group .panel-body {
+.emdotnet-theme-mobile-menu .panel-group .panel-body {
   padding: 0; }
 
-.koksijde-theme-mobile-menu .panel-title {
+.emdotnet-theme-mobile-menu .panel-title {
   font-size: 14px; }
 
-.koksijde-theme-mobile-menu .panel-title a:hover {
+.emdotnet-theme-mobile-menu .panel-title a:hover {
   color: #333;
   text-decoration: none; }
 
-.koksijde-theme-mobile-menu .panel-title a:focus {
+.emdotnet-theme-mobile-menu .panel-title a:focus {
   text-decoration: none; }
 
-.koksijde-theme-mobile-menu .panel-group ul.panel-body {
+.emdotnet-theme-mobile-menu .panel-group ul.panel-body {
   list-style-type: none;
   margin: 0;
   padding: 0 0 0 15px; }
 
 @media screen and (min-width: 768px) {
-  .navbar-collapse.collapse.koksijde-theme-mobile-menu {
+  .navbar-collapse.collapse.emdotnet-theme-mobile-menu {
     display: none !important; } }
 
 /*--------------------------------------------------------------

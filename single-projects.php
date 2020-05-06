@@ -23,7 +23,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<?php koksijde_theme_post_thumbnail('project-single-thumb'); ?>
+			<?php emdotnet_theme_post_thumbnail('project-single-thumb'); ?>
 		</div>
 	</div>
 	<div class="row">
@@ -34,7 +34,7 @@
 				get_template_part('content','portfolio');
 
 				// Previous/next post navigation.
-				koksijde_theme_post_nav();
+				emdotnet_theme_post_nav();
 			endwhile;
 			?>
 		</div>
