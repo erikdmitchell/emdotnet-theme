@@ -1,35 +1,5 @@
 
 
-
-/**
- * back to top button
- */
-
-
-
-
-/*--------------------------------------------------------------
-5.0 Slider
---------------------------------------------------------------*/
-/**
- * general slider formatting
- */
-.mdw-wp-slider .carousel-indicators {
-  bottom: 5px; }
-
-.mdw-wp-slider .carousel-inner > .item {
-  height: 100%; }
-
-.mdw-wp-slider .carousel-caption {
-  font-size: 18px; }
-
-.carousel-inner > .item > a > img,
-.carousel-inner > .item > img {
-  margin: 0 auto; }
-
-
-
-
 /* projects */
 .home-feature {
 	margin: 15px 0;
