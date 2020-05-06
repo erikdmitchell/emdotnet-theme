@@ -1,0 +1,371 @@
+/*
+ Theme Name:   EMdotNET (2016)
+ Theme URI:		 http://erikmitchell.net
+ Description:  Official 2016 theme for ErikMitchell.net
+ Author:       Erik Mitchell
+ Author URI:   http://erikmitchell.net
+ Template:     koksijde
+ Version:      1.1.0
+ Text Domain:  emdotnet
+*/
+
+/**
+ * general
+ */
+.container-full {
+	padding: 0;
+}
+
+/** header
+-----------*/
+
+/** navbar
+-----------*/
+.navbar .navbar-nav.logo {
+	margin-top: 25px;
+}
+.navbar-default .navbar-nav > .current-menu-item > a,
+.navbar-default .navbar-nav > .current_page_item > a,
+.navbar-default .navbar-nav > .current-page-ancestor > a,
+.navbar-default .navbar-nav > .active > a {
+	background-image: none;
+	box-shadow: none;
+	background-color: #fff;
+	color: #ed564b;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #3b3b3b;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #357ebd;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #357ebd;
+	background-color: #fff;
+}
+
+/* home */
+.container-full.banner {
+	max-height: 300px;
+	overflow: hidden;
+}
+.home-about {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: #ccc;
+	color: #000;
+}
+.page-content-function .image {
+	text-align: center;
+}
+.page-content-function .image .fa {
+	font-size: 65px;
+}
+.page-content-function .title {
+	text-align: center;
+}
+/* projects */
+.home-feature {
+	margin: 15px 0;
+}
+.home-feature .project-wrap {
+	padding: 0;
+}
+.home-feature .project {
+
+}
+
+.home-feature .project img {
+
+}
+.home-feature .project a {
+	color: #fff;
+}
+.home-feature .project h3 {
+	font-size: 18px;
+	text-align: center;
+	margin: 0;
+}
+.home-feature .project .title {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(58, 58, 58, 0.70);
+	width: 100%;
+	height: 100%;
+}
+.home-feature .project .title h3 {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* tools i use */
+.tools-i-use {
+	background: #eee;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 15px 0;
+}
+.tools-i-use .tools-block {
+	text-align: center;
+}
+.tools-i-use .tools-block .fa {
+	font-size: 65px;
+}
+
+/**
+ * about on home
+ */
+.home-about .image {
+	float: left;
+	margin: 0 15px 5px 0;
+}
+.home-about .image img {
+	max-width: 300px;
+}
+
+/** about page
+---------------*/
+.term-list {
+	list-style-type: none;
+	padding: 0 0 0 20px;
+	margin: 0 0 10px 0;
+}
+.term-skills h3 {
+	margin-top: 0;
+}
+
+/** portfolio page
+-------------------*/
+.filter-wrapper .filter li.active,
+.filter-wrapper .filter li.active a {
+	background: #ed564b;
+}
+.filter-wrapper a:link,
+.filter-wrapper a:visited {
+	color: #6f7779;
+}
+.filter-wrapper a:hover,
+.filter-wrapper a:active {
+	color: #ed564b;
+}
+/* port single */
+.single-portfolio .post-thumbnail {
+	margin-bottom: 20px;
+}
+
+/** general colors, fonts, etc
+-------------------------------*/
+.red {
+	color: #ed564b;
+	background: #ed564b;
+}
+.light-blk {
+	color: #3b3b3b;
+	background: #3b3b3b;
+}
+.gray {
+	color: #aaa;
+	background: #aaa;
+}
+.black {
+	color: #000;
+	background: #000;
+}
+h1.page-title ,
+h1.entry-title a:link,
+h1.entry-title a:visited {
+	color: #000;
+}
+.page-header {
+	background: #ccc;
+	border: 0 solid #ccc;
+	border-left: 0;
+	border-right: 0;
+	text-transform: uppercase;
+	margin-top: 0;
+	color: #000;
+}
+.sidebar h1,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4 {
+	text-transform: uppercase;
+}
+.sidebar a:link,
+.sidebar a:visited {
+	color: #6f7779;
+}
+.sidebar a:hover,
+.sidebar a:active {
+	color: #ed564b;
+}
+a:link,
+a:visited {
+	color: #3b3b3b;
+}
+a:hover,
+a:active {
+	color: #ed564b;
+	text-decoration: none;
+}
+.btn-primary {
+/*
+	background: #3b3b3b;
+	background-image: none;
+	border-color: #ccc;
+*/
+	background: #ed564b;
+	border-color: #f96b61;
+}
+a.btn-primary {
+	color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	background-color: #ed564b;
+	background-position: 0 -15px;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+	color: #ffffff;
+	background-color: #ed564b;
+	border-color: #f96b61;
+}
+.section-title {
+	text-transform: uppercase;
+}
+.section-title h2 {
+	font-size: 24px;
+}
+.section-title p {
+	color:	#aaa;
+}
+/** blog */
+.blog h1.entry-title a:link,
+.blog h1.entry-title a:visited {
+	color: #000;
+}
+.blog h1.entry-title a:focus,
+.blog h1.entry-title a:hover {
+	color: #ed564b;
+}
+
+/** footer
+-----------*/
+footer {
+	background: #3b3b3b;
+	color: #fff;
+	margin-top: 30px;
+}
+.home footer {
+	margin-top: 0;
+}
+footer .footer-widgets h3 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 10px 0px;
+	color: #fff;
+	text-transform: uppercase;
+}
+.footer-widgets a,
+.footer-widgets a:visited {
+	color: #fff;
+}
+.footer-widgets a:focus,
+.footer-widgets a:hover {
+	color: #ccc;
+	//text-decoration: underline;
+}
+.footer-widgets .menu {
+
+}
+.footer-widgets .menu li {
+
+}
+.footer-widgets .social-media {
+
+}
+.footer-widgets .social-media li {
+	font-size: 30px;
+	float: left;
+	padding-right: 10px;
+}
+.footer-widgets .social-media li a:hover {
+	color: #ccc;
+}
+
+footer .copyright {
+	margin: 20px 0	color: #fff;
+}
+
+/* portfolio (project) single
+------------------------------ */
+/* menu navigation fix */
+.single-projects .navbar-default .navbar-nav > li.menu-item-283 > a {
+	color: #ed564b;
+	background-color: #fff;
+}
+.project-details {
+
+}
+.project-details a {
+	color: #ed564b;
+}
+.project-details a:hover {
+	text-decoration: underline;
+}
+h3.project-details-title {
+	margin-top: 0;
+}
+.project-details-list {
+	list-style-type: none;
+	margin: 0;
+}
+.project-details-list > li {
+
+}
+.project-details-list > li > .header {
+	font-weight: bold;
+}
+.project-details > .skills,
+.project-details > .services {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+}
+.projects .entry-content,
+.project-details {
+	margin-top: 20px;
+}
+.post-navigation {
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
+}
+.post-navigation .meta-nav {
+	display: none;
+}
+
+/**
+ * plugins page
+**/
+article.plugin {
+	overflow: hidden;
+}
+article.plugin a {
+	color: #ed564b;
+}
+article.plugin a:hover {
+	text-decoration: underline;
+}
+article.plugin img {
+	float: left;
+	margin: 0 10px 5px 0;
+}
