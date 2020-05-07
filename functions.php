@@ -516,7 +516,7 @@ function get_terms_list($term=false) {
  * @param int $limit (default: 6)
  * @return void
  */
-function get_home_projects($post_type='portfolio',$limit=6) {
+function get_home_projects($post_type='portfolio', $limit=6) {
 	$html=null;
 	$args=array(
 		'posts_per_page' => $limit,
@@ -534,15 +534,11 @@ function get_home_projects($post_type='portfolio',$limit=6) {
 		else:
 			$thumb='<a href="'.get_permalink($post->ID).'"><img src="http://placehold.it/555x555" class="img-responsive"></a>';
 		endif;
-
-		$html.='<div class="col-md-4 project-wrap">';
-			$html.='<div class="project" id="post-'.$post->ID.'">';
-				$html.=$thumb;
-				$html.='<a href="'.get_permalink($post->ID).'"><div class="title"><h3>'.get_the_title($post->ID).'</h3></div></a>';
-				//$html.=get_post_excerpt_by_id($post->ID,45,'','...');
-				//$html.='<p><a href="'.get_permalink($post->ID).'" class="btn btn-primary">Read More</a></p>';
-			$html.='</div>';
-		$html.='</div><!-- .col-md-4 -->';
+		
+		$html.='<div class="project" id="post-'.$post->ID.'">';
+			$html.=$thumb;
+			$html.='<a href="'.get_permalink($post->ID).'"><div class="title"><h3>'.get_the_title($post->ID).'</h3></div></a>';
+		$html.='</div>';
 	endforeach;
 
 	return $html;

@@ -29,10 +29,8 @@
 		<div class="tools-block"></div>
 	</div>
 
-	<div class="home-feature">
-		<div class="container projects">
-			<?php echo get_home_projects('projects'); ?>
-		</div><!-- .container -->
+	<div class="home-feature-projects">
+        <?php echo get_home_projects('projects'); ?>
 	</div>
 
 	<div class="home-about">
