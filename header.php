@@ -30,7 +30,6 @@
 						</button>
 						<?php emdotnet_theme_navbar_brand(); ?>
 					</div>
-					<?php emdotnet_secondary_navigation_setup(); ?>
 					<div class="collapse navbar-collapse primary-menu">
 						<?php
 						wp_nav_menu(array(
@@ -42,7 +41,6 @@
 						));
 						?>
 					</div> <!-- .primary-menu -->
-					<?php emdotnet_mobile_navigation_setup(); ?>
 				</nav>
 			</div><!-- .container -->
 		</div><!-- .navigation -->

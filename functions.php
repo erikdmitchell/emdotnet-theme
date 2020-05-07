@@ -95,8 +95,6 @@ function emdotnet_theme_setup() {
 	// register our navigation area
 	register_nav_menus( array(
 		'primary' => __('Primary Menu','emdotnet'),
-		'mobile' => __('Mobile Menu','emdotnet'),
-		'secondary' => __('Secondary Menu','emdotnet'),
 	) );
 
 	/**
@@ -410,75 +408,6 @@ function emdotnet_theme_special_nav_classes($args) {
 add_filter('wp_nav_menu_args','emdotnet_theme_special_nav_classes',10,1);
 
 /**
- * emdotnet_mobile_navigation_setup function.
- *
- * checks if we have an active mobile menu
- * if active mobile, sets it, if not, default to primary
- *
- * @access public
- * @return void
- */
-function emdotnet_mobile_navigation_setup() {
-	$html=null;
-
-	if (has_nav_menu('mobile')) :
-		$location='mobile';
-	else :
-		$location='primary';
-	endif;
-
-	$location=apply_filters('emdotnet_mobile_navigation_setup_location',$location);
-
-	if ($location=='primary' && !has_nav_menu($location))
-		return false;
-
-	$html.='<div id="emdotnet-mobile-nav" class="collapse navbar-collapse emdotnet-mobile-menu hidden-sm hidden-md hidden-lg">';
-
-		$html.=wp_nav_menu(array(
-			'theme_location' => $location,
-			'container' => 'div',
-			'container_class' => 'panel-group navbar-nav',
-			'container_id' => 'accordion',
-			'echo' => false,
-			//'items_wrap'=>'%3$s',
-			//'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			//'walker' => new emdotnetMobileNavWalker()
-		));
-
-	$html.='</div><!-- .emdotnet-theme-mobile-menu -->';
-
-	echo $html;
-}
-
-/**
- * emdotnet_secondary_navigation_setup function.
- *
- * if our secondary menu is set, this shows it
- *
- * @access public
- * @return void
- */
-function emdotnet_secondary_navigation_setup() {
-	$html=null;
-
-	if (!has_nav_menu('secondary'))
-		return false;
-
-	$html.='<div class="collapse navbar-collapse secondary-menu">';
-		$html.=wp_nav_menu(array(
-			'theme_location' => 'secondary',
-			'container' => false,
-			'menu_class' => 'nav navbar-nav pull-right secondary',
-			'echo' => false,
-			//'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			//'walker' => new wp_bootstrap_navwalker()
-		));
-	$html.='</div> <!-- .secondary-menu -->';
-
-	echo $html;
-}
-
-/**
  * emdotnet_back_to_top function.
  *
  * @access public
@@ -516,18 +445,6 @@ function emdotnet_wp_parse_args(&$a,$b) {
 	}
 	return $result;
 }
-
-/**
- * Initialize theme updater function. Utalizes the theme-update-checker.php file in theme-updates
- * Develpoed by W-Shadow (http://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/)
- */
-/*
-require_once(get_template_directory().'/inc/theme-updates/theme-update-checker.php');
-$update_checker = new ThemeUpdateChecker(
-	'mdw-wp-theme',
-	'http://www.millerdesignworks.com/mdw-wp-themes/mdw-wp-theme.json'
-);
-*/
 
 /***** PORTFOLIO *****/
 
