@@ -1,46 +1,37 @@
-<!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<!doctype html>
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-  <head>
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<?php wp_head(); ?>
+</head>
 
-    <?php wp_head(); ?>
-  </head>
+<body <?php body_class(); ?>>
 
-  <body <?php body_class(); ?>>
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+            <?php emdotnet_theme_navbar_brand(); ?>
+		</div><!-- .site-branding -->
 
-		<div class="container-fluid primary-nav">
-			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".emdotnet-mobile-menu">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<?php emdotnet_theme_navbar_brand(); ?>
-					</div>
-					<div class="collapse navbar-collapse primary-menu">
-						<?php
-						wp_nav_menu(array(
-							'theme_location' => 'primary',
-							'container' => false,
-							'menu_class' => 'nav navbar-nav pull-right',
-							//'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-							//'walker' => new wp_bootstrap_navwalker()
-						));
-						?>
-					</div> <!-- .primary-menu -->
-				</nav>
-			</div><!-- .container -->
-		</div><!-- .navigation -->
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'emdotnet' ); ?></button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_id' => 'primary-menu',
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+	
+	
+
+
+
+
+
+
