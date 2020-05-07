@@ -5,8 +5,6 @@
 ?>
 <?php get_header(); ?>
 
-	<?php //get_template_part('content','slider'); ?>
-
 	<div class="container-full banner">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cobbles.jpg" />
 	</div>
