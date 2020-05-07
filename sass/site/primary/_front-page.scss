@@ -1,9 +1,13 @@
+.banner {
+    max-height: 400px;
+    overflow: hidden;
+}
+
 /* tools i use */
 .tools-i-use {
 	background: #eee;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	margin: 15px 0;
 
     .tools-block {
 	    text-align: center;
