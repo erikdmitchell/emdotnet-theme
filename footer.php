@@ -1,22 +1,10 @@
         <footer>
             <div class="footer-widgets">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <?php dynamic_sidebar( 'footer-1' ); ?>
-                        </div>
-                        <div class="col-md-4">
-                            <?php dynamic_sidebar( 'footer-2' ); ?>
-                        </div>
-                        <div class="col-md-4">
-                            <?php dynamic_sidebar( 'footer-3' ); ?>
-                        </div>
-                    </div>
-                </div> <!-- /container -->
+                <div class="footer-widget footer-widget-1"><?php dynamic_sidebar( 'footer-1' ); ?></div>
+                <div class="footer-widget footer-widget-2"><?php dynamic_sidebar( 'footer-2' ); ?></div>
+                <div class="footer-widget footer-widget-3"><?php dynamic_sidebar( 'footer-3' ); ?></div>
             </div><!-- .footer-widgets -->
-            <div class="copyright">
-                <?php echo get_bloginfo( 'name' ); ?> &copy; <?php echo date( 'Y' ); ?>
-            </div>
+            <div class="copyright"><?php echo get_bloginfo( 'name' ); ?> &copy; <?php echo date( 'Y' ); ?></div>
         </footer>
 
         <?php wp_footer(); ?>
