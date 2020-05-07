@@ -1,0 +1,40 @@
+/* portfolio (project) single
+------------------------------ */
+.project-details {
+
+}
+.project-details a {
+	color: #ed564b;
+}
+.project-details a:hover {
+	text-decoration: underline;
+}
+h3.project-details-title {
+	margin-top: 0;
+}
+.project-details-list {
+	list-style-type: none;
+	margin: 0;
+}
+.project-details-list > li {
+
+}
+.project-details-list > li > .header {
+	font-weight: bold;
+}
+.project-details > .skills,
+.project-details > .services {
+	list-style-type: none;
+	margin: 0 0 0 10px;
+}
+.projects .entry-content,
+.project-details {
+	margin-top: 20px;
+}
+.post-navigation {
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
+}
+.post-navigation .meta-nav {
+	display: none;
+}

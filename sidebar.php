@@ -1,1 +1,4 @@
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?><?php endif; ?>
+<?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar() ) :
+    ?>
+    <?php
+endif;

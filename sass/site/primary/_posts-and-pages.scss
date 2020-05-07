@@ -1,0 +1,70 @@
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/** about page
+---------------*/
+.term-list {
+	list-style-type: none;
+	padding: 0 0 0 20px;
+	margin: 0 0 10px 0;
+}
+.term-skills h3 {
+	margin-top: 0;
+}
+
+/** portfolio page
+-------------------*/
+.filter-wrapper .filter li.active,
+.filter-wrapper .filter li.active a {
+	background: #ed564b;
+}
+.filter-wrapper a:link,
+.filter-wrapper a:visited {
+	color: #6f7779;
+}
+.filter-wrapper a:hover,
+.filter-wrapper a:active {
+	color: #ed564b;
+}
+/* port single */
+.single-portfolio .post-thumbnail {
+	margin-bottom: 20px;
+}
+
+/**
+ * plugins page
+**/
+article.plugin {
+	overflow: hidden;
+}
+article.plugin a {
+	color: #ed564b;
+}
+article.plugin a:hover {
+	text-decoration: underline;
+}
+article.plugin img {
+	float: left;
+	margin: 0 10px 5px 0;
+}

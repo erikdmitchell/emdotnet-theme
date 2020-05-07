@@ -16,14 +16,17 @@
  *
  * @since emdotnet 1.0.0
  */
-if (!isset($emdotnet_theme_options))
-	$emdotnet_theme_options=array('option_name' => 'emdotnet_theme_options');
+if ( ! isset( $emdotnet_theme_options ) ) {
+    $emdotnet_theme_options = array( 'option_name' => 'emdotnet_theme_options' );
+}
 
-if (!isset($emdotnet_theme_options_tabs))
-	$emdotnet_theme_options_tabs=array();
+if ( ! isset( $emdotnet_theme_options_tabs ) ) {
+    $emdotnet_theme_options_tabs = array();
+}
 
-if (!isset($emdotnet_theme_options_hooks))
-	$emdotnet_theme_options_hooks=array();
+if ( ! isset( $emdotnet_theme_options_hooks ) ) {
+    $emdotnet_theme_options_hooks = array();
+}
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -31,7 +34,7 @@ if (!isset($emdotnet_theme_options_hooks))
  * @since emdotnet 1.0.0
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 1200;
+    $content_width = 1200;
 }
 
 /**
@@ -44,78 +47,68 @@ if ( ! isset( $content_width ) ) {
  * @since emdotnet 1.0.0
  */
 function emdotnet_theme_setup() {
-	/**
-	 * add our theme support options
-	 */
-	$custom_header_args=array(
-		'width' => 163,
-		'height' => 76
-	);
+    /**
+     * add our theme support options
+     */
+    $custom_header_args = array(
+        'width' => 163,
+        'height' => 76,
+    );
 
-	$custom_background_args=array(
-		'deafult-color' => 'ffffff'
-	);
+    $custom_background_args = array(
+        'deafult-color' => 'ffffff',
+    );
 
-	add_theme_support('automatic-feed-links');
-	add_theme_support('custom-header', $custom_header_args);
-	add_theme_support('custom-background', $custom_background_args);
-	add_theme_support('menus');
-	add_theme_support('post-thumbnails');
-	add_theme_support('title-tag');
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'custom-header', $custom_header_args );
+    add_theme_support( 'custom-background', $custom_background_args );
+    add_theme_support( 'menus' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
 
-	/**
-	 * add our image size(s)
-	 */
-	add_image_size('navbar-logo', 163, 100, true);
-	add_image_size('slide-image',1200,500,true);
-	add_image_size('project-home-thumb',555,555,true);
-	add_image_size('project-single-thumb',1140,655,true);	
+    /**
+     * add our image size(s)
+     */
+    add_image_size( 'navbar-logo', 163, 100, true );
+    add_image_size( 'slide-image', 1200, 500, true );
+    add_image_size( 'project-home-thumb', 555, 555, true );
+    add_image_size( 'project-single-thumb', 1140, 655, true );
 
-	/**
-	 * include admin stuff
-	 */
-	include_once(get_template_directory().'/inc/admin/init.php');
+    /**
+     * include admin stuff
+     */
+    include_once( get_template_directory() . '/inc/admin/init.php' );
 
-	/**
-	 * include bootstrap nav walker
-	 */
-	include_once(get_template_directory().'/inc/wp_bootstrap_navwalker.php');
+    /**
+     * include theme slider class
+     */
+    include_once( get_template_directory() . '/inc/slider.php' );
 
-	/**
-	 * include bootstrap mobile nav walker
-	 */
-	include_once(get_template_directory().'/inc/mobile_nav_walker.php');
+    /**
+     * include theme meta page
+     * allows users to hook and filter into the default meta tags in the header
+     */
+    include_once( get_template_directory() . '/inc/theme-meta.php' );
 
-	/**
-	 * include theme slider class
-	 */
-	include_once(get_template_directory().'/inc/slider.php');
+    /**
+     * include theme options
+     */
+    include_once( get_template_directory() . '/theme-options.php' );
 
-	/**
-	 * include theme meta page
-	 * allows users to hook and filter into the default meta tags in the header
-	 */
-	include_once(get_template_directory().'/inc/theme-meta.php');
+    // register our navigation area
+    register_nav_menus(
+        array(
+            'primary' => __( 'Primary Menu', 'emdotnet' ),
+        )
+    );
 
-	/**
-	 * include theme options
-	 */
-	include_once(get_template_directory().'/theme-options.php');
-
-	// register our navigation area
-	register_nav_menus( array(
-		'primary' => __('Primary Menu','emdotnet'),
-		'mobile' => __('Mobile Menu','emdotnet'),
-		'secondary' => __('Secondary Menu','emdotnet'),
-	) );
-
-	/**
-	 * This theme styles the visual editor to resemble the theme style
-	 */
-	add_editor_style('inc/css/editor-style.css');
+    /**
+     * This theme styles the visual editor to resemble the theme style
+     */
+    add_editor_style( 'inc/css/editor-style.css' );
 
 }
-add_action('after_setup_theme','emdotnet_theme_setup');
+add_action( 'after_setup_theme', 'emdotnet_theme_setup' );
 
 /**
  * Register widget area.
@@ -124,44 +117,52 @@ add_action('after_setup_theme','emdotnet_theme_setup');
  */
 function emdotnet_theme_widgets_init() {
 
-	register_sidebar(array(
-		'name' => 'Sidebar',
-		'id' => 'sidebar',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+    register_sidebar(
+        array(
+            'name' => 'Sidebar',
+            'id' => 'sidebar',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
 
-	register_sidebar(array(
-		'name' => 'Footer 1',
-		'id' => 'footer-1',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+    register_sidebar(
+        array(
+            'name' => 'Footer 1',
+            'id' => 'footer-1',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
 
-	register_sidebar(array(
-		'name' => 'Footer 2',
-		'id' => 'footer-2',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+    register_sidebar(
+        array(
+            'name' => 'Footer 2',
+            'id' => 'footer-2',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
 
-	register_sidebar(array(
-		'name' => 'Footer 3',
-		'id' => 'footer-3',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
+    register_sidebar(
+        array(
+            'name' => 'Footer 3',
+            'id' => 'footer-3',
+            'before_widget' => '',
+            'after_widget' => '',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+        )
+    );
 
 }
-add_action('widgets_init','emdotnet_theme_widgets_init');
+add_action( 'widgets_init', 'emdotnet_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -169,47 +170,43 @@ add_action('widgets_init','emdotnet_theme_widgets_init');
  * @since emdotnet 1.1.9
  */
 function emdotnet_theme_scripts() {
-	global $wp_scripts;
+    global $wp_scripts;
 
-	// enqueue our scripts for bootstrap, slider and theme
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrap',get_template_directory_uri().'/inc/js/bootstrap.min.js',array('jquery'),'3.3.2',true);
-	wp_enqueue_script('jquery-actual-script',get_template_directory_uri().'/inc/js/jquery.actual.min.js',array('jquery'),'1.0.16',true);
-	wp_enqueue_script('emdotnet-theme-script',get_template_directory_uri().'/inc/js/emdotnet-theme.js',array('jquery'),'1.2.0',true);
+    // enqueue our scripts for slider and theme
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
+    wp_enqueue_script( 'emdotnet-theme-script', get_template_directory_uri() . '/inc/js/emdotnet-theme.js', array( 'jquery' ), '1.2.0', true );
 
-	if ( is_singular() ) :
-		wp_enqueue_script( 'comment-reply' );
-	endif;
+    if ( is_singular() ) :
+        wp_enqueue_script( 'comment-reply' );
+    endif;
 
-  /**
-   * Load our IE specific scripts for a range of older versions:
-   * <!--[if lt IE 9]> ... <![endif]-->
-   * <!--[if lte IE 8]> ... <![endif]-->
-   */
-  // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries //
-	wp_register_script('html5shiv-script', get_template_directory_uri().'/inc/js/html5shiv.min.js', array(), '3.7.3-pre');
-	wp_register_script('respond-script', get_template_directory_uri().'/inc/js/respond.min.js', array(), '1.4.2');
+    /**
+     * Load our IE specific scripts for a range of older versions:
+     * <!--[if lt IE 9]> ... <![endif]-->
+     * <!--[if lte IE 8]> ... <![endif]-->
+     */
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries //
+    wp_register_script( 'html5shiv-script', get_template_directory_uri() . '/inc/js/html5shiv.min.js', array(), '3.7.3-pre' );
+    wp_register_script( 'respond-script', get_template_directory_uri() . '/inc/js/respond.min.js', array(), '1.4.2' );
 
-	$wp_scripts->add_data('html5shiv-script', 'conditional', 'lt IE 9');
-	$wp_scripts->add_data('respond-script', 'conditional', 'lt IE 9');
+    $wp_scripts->add_data( 'html5shiv-script', 'conditional', 'lt IE 9' );
+    $wp_scripts->add_data( 'respond-script', 'conditional', 'lt IE 9' );
 
-	// enqueue font awesome and our main stylesheet
-	wp_enqueue_style('font-awesome-style',get_template_directory_uri().'/inc/css/font-awesome.min.css',array(),'4.5.0');
-	wp_enqueue_style('emdotnet-theme-style',get_stylesheet_uri());
-	
-	//
-    wp_enqueue_script('jquery-equalheights-min-script',get_stylesheet_directory_uri().'/js/jquery.equalheights.min.js',array('jquery'));
-	wp_enqueue_script('edm-theme-script',get_stylesheet_directory_uri().'/js/theme.js',array('jquery','jquery-equalheights-min-script'),'1.0.0',false);
+    // enqueue font awesome and our main stylesheet
+    wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), '4.5.0' );
+    wp_enqueue_style( 'emdotnet-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_style('parent-style', get_template_directory_uri().'/style.css');
+        wp_enqueue_script( 'jquery-equalheights-min-script', get_stylesheet_directory_uri() . '/js/jquery.equalheights.min.js', array( 'jquery' ) );
+    wp_enqueue_script( 'edm-theme-script', get_stylesheet_directory_uri() . '/js/theme.js', array( 'jquery', 'jquery-equalheights-min-script' ), '1.0.0', false );
 
-	//wp_enqueue_style('font-awesome-style','//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',array(),'4.3.0');
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
-	if (is_front_page()) {
-		wp_enqueue_script('edm-theme-front-page-script',get_stylesheet_directory_uri().'/js/front-page.js');
+    if ( is_front_page() ) {
+        wp_enqueue_script( 'edm-theme-front-page-script', get_stylesheet_directory_uri() . '/js/front-page.js' );
     }
 }
-add_action('wp_enqueue_scripts','emdotnet_theme_scripts');
+add_action( 'wp_enqueue_scripts', 'emdotnet_theme_scripts' );
 
 /**
  * Display an optional post thumbnail.
@@ -221,31 +218,32 @@ add_action('wp_enqueue_scripts','emdotnet_theme_scripts');
  * @based on twentyfourteen
  *
  * @return void
-*/
-function emdotnet_theme_post_thumbnail($size='full') {
-	global $post;
+ */
+function emdotnet_theme_post_thumbnail( $size = 'full' ) {
+    global $post;
 
-	$html=null;
-	$attr=array(
-		'class' => 'img-responsive'
-	);
+    $html = null;
+    $attr = array(
+        'class' => 'img-responsive',
+    );
 
-	if (post_password_required() || !has_post_thumbnail())
-		return;
+    if ( post_password_required() || ! has_post_thumbnail() ) {
+        return;
+    }
 
-	if (is_singular()) :
-		$html.='<div class="post-thumbnail">';
-			$html.=get_the_post_thumbnail($post->ID,$size,$attr);
-		$html.='</div>';
-	else :
-		$html.='<a class="post-thumbnail" href="'.get_permalink($post->ID).'">';
-			$html.=get_the_post_thumbnail($post->ID,$size,$attr);
-		$html.='</a>';
-	endif;
+    if ( is_singular() ) :
+        $html .= '<div class="post-thumbnail">';
+            $html .= get_the_post_thumbnail( $post->ID, $size, $attr );
+        $html .= '</div>';
+    else :
+        $html .= '<a class="post-thumbnail" href="' . get_permalink( $post->ID ) . '">';
+            $html .= get_the_post_thumbnail( $post->ID, $size, $attr );
+        $html .= '</a>';
+    endif;
 
-	$image=apply_filters('emdotnet_theme_post_thumbnail',$html,$size,$attr);
+    $image = apply_filters( 'emdotnet_theme_post_thumbnail', $html, $size, $attr );
 
-	echo $image;
+    echo $image;
 }
 
 /**
@@ -257,15 +255,15 @@ function emdotnet_theme_post_thumbnail($size='full') {
  * @return void
  */
 function emdotnet_theme_posted_on() {
-	if ( is_sticky() && is_home() && ! is_paged() ) {
-		echo '<span class="featured-post"><span class="glyphicon glyphicon-pushpin"></span>' . __( 'Sticky', 'emdotnet' ) . '</span>';
-	}
+    if ( is_sticky() && is_home() && ! is_paged() ) {
+        echo '<span class="featured-post"><span class="glyphicon glyphicon-pushpin"></span>' . __( 'Sticky', 'emdotnet' ) . '</span>';
+    }
 
-	// Set up and print post meta information. -- hide date if sticky
-	if (!is_sticky()) :
-		echo '<span class="entry-date"><span class="glyphicon glyphicon-time"></span><a href="'.get_permalink().'" rel="bookmark"><time class="entry-date" datetime="'.get_the_date('c').'">'.get_the_date().'</time></a></span>';
-	endif;
-	echo '<span class="byline"><span class="glyphicon glyphicon-user"></span><span class="author vcard"><a class="url fn n" href="'.get_author_posts_url( get_the_author_meta( 'ID' ) ).'" rel="author">'.get_the_author().'</a></span></span>';
+    // Set up and print post meta information. -- hide date if sticky
+    if ( ! is_sticky() ) :
+        echo '<span class="entry-date"><span class="glyphicon glyphicon-time"></span><a href="' . get_permalink() . '" rel="bookmark"><time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date() . '</time></a></span>';
+    endif;
+    echo '<span class="byline"><span class="glyphicon glyphicon-user"></span><span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
 }
 
 /**
@@ -277,47 +275,49 @@ function emdotnet_theme_posted_on() {
  * @return void
  */
 function emdotnet_theme_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
+    // Don't print empty markup if there's only one page.
+    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+        return;
+    }
 
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
+    $paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
+    $pagenum_link = html_entity_decode( get_pagenum_link() );
+    $query_args   = array();
+    $url_parts    = explode( '?', $pagenum_link );
 
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
+    if ( isset( $url_parts[1] ) ) {
+        wp_parse_str( $url_parts[1], $query_args );
+    }
 
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), esc_url($pagenum_link) );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
+    $pagenum_link = remove_query_arg( array_keys( $query_args ), esc_url( $pagenum_link ) );
+    $pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
 
-	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
+    $format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+    $format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
 
-	// Set up paginated links.
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $GLOBALS['wp_query']->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '&laquo; Previous', 'emdotnet' ),
-		'next_text' => __( 'Next &raquo;', 'emdotnet' ),
-	) );
+    // Set up paginated links.
+    $links = paginate_links(
+        array(
+            'base'     => $pagenum_link,
+            'format'   => $format,
+            'total'    => $GLOBALS['wp_query']->max_num_pages,
+            'current'  => $paged,
+            'mid_size' => 1,
+            'add_args' => array_map( 'urlencode', $query_args ),
+            'prev_text' => __( '&laquo; Previous', 'emdotnet' ),
+            'next_text' => __( 'Next &raquo;', 'emdotnet' ),
+        )
+    );
 
-	if ( $links ) :
-		?>
-		<nav class="navigation paging-navigation" role="navigation">
-			<div class="pagination loop-pagination">
-				<?php echo $links; ?>
-			</div><!-- .pagination -->
-		</nav><!-- .navigation -->
-		<?php
-	endif;
+    if ( $links ) :
+        ?>
+        <nav class="navigation paging-navigation" role="navigation">
+            <div class="pagination loop-pagination">
+                <?php echo $links; ?>
+            </div><!-- .pagination -->
+        </nav><!-- .navigation -->
+        <?php
+    endif;
 }
 
 /**
@@ -329,28 +329,28 @@ function emdotnet_theme_paging_nav() {
  * @return void
  */
 function emdotnet_theme_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+    $next     = get_adjacent_post( false, '', false );
 
-	if ( ! $next && ! $previous ) {
-		return;
-	}
+    if ( ! $next && ! $previous ) {
+        return;
+    }
 
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<div class="nav-links">
-			<?php
-			if ( is_attachment() ) :
-				previous_post_link( __('<div class="published-in"><span class="meta-nav">Published In:</span> %link</div>', 'emdotnet'), '%title' );
-			else :
-				previous_post_link( __('<div class="prev-post"><span class="meta-nav">Previous Post:</span> %link</div>', 'emdotnet'), '%title' );
-				next_post_link( __('<div class="next-post"><span class="meta-nav">Next Post:</span> %link</div>', 'emdotnet'), '%title' );
-			endif;
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
+    ?>
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links">
+            <?php
+            if ( is_attachment() ) :
+                previous_post_link( __( '<div class="published-in"><span class="meta-nav">Published In:</span> %link</div>', 'emdotnet' ), '%title' );
+            else :
+                previous_post_link( __( '<div class="prev-post"><span class="meta-nav">Previous Post:</span> %link</div>', 'emdotnet' ), '%title' );
+                next_post_link( __( '<div class="next-post"><span class="meta-nav">Next Post:</span> %link</div>', 'emdotnet' ), '%title' );
+            endif;
+            ?>
+        </div><!-- .nav-links -->
+    </nav><!-- .navigation -->
+    <?php
 }
 
 /**
@@ -362,20 +362,21 @@ function emdotnet_theme_post_nav() {
  * @return void
  */
 function display_meta_description() {
-	global $post;
+    global $post;
 
-	$title=null;
+    $title = null;
 
-	if (isset($post->post_title))
-		$title=$post->post_title;
+    if ( isset( $post->post_title ) ) {
+        $title = $post->post_title;
+    }
 
-	if ( is_single() ) {
-		return single_post_title('', false);
-	} else {
-		return $title.' - '.get_bloginfo('name').' - '.get_bloginfo('description');
-	}
+    if ( is_single() ) {
+        return single_post_title( '', false );
+    } else {
+        return $title . ' - ' . get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
+    }
 
-	return false;
+    return false;
 }
 
 /**
@@ -387,108 +388,20 @@ function display_meta_description() {
  * @return void
  */
 function emdotnet_theme_navbar_brand() {
-	global $emdotnet_theme_options;
+    global $emdotnet_theme_options;
 
-	$text=get_bloginfo('name');
+    $text = get_bloginfo( 'name' );
 
-	if (isset($emdotnet_theme_options['default']['logo']['text']) && $emdotnet_theme_options['default']['logo']['text']!='')
-		$text=$emdotnet_theme_options['default']['logo']['text'];
+    if ( isset( $emdotnet_theme_options['default']['logo']['text'] ) && $emdotnet_theme_options['default']['logo']['text'] != '' ) {
+        $text = $emdotnet_theme_options['default']['logo']['text'];
+    }
 
-	// display header image or text //
-	if (get_header_image()) :
-		echo '<img src="'.get_header_image().'" height="'.get_custom_header()->height.'" width="'.get_custom_header()->width.'" alt="" />';
-	else :
-		echo '<a class="navbar-brand" href="'.home_url().'">'.$text.'</a>';
-	endif;
-}
-
-/**
- * emdotnet_theme_special_nav_classes function.
- *
- * allows us to add more specific classes to the wp nav menu
- * more specifically, we can add a logo class depending on theme options
- *
- * @access public
- * @param mixed $args
- * @return void
- */
-function emdotnet_theme_special_nav_classes($args) {
-	global $emdotnet_theme_options;
-
-	if (isset($emdotnet_theme_options['default']['logo']['image']) && $emdotnet_theme_options['default']['logo']['image']!='')
-		$args['menu_class'].=' logo';
-
-	return $args;
-}
-add_filter('wp_nav_menu_args','emdotnet_theme_special_nav_classes',10,1);
-
-/**
- * emdotnet_mobile_navigation_setup function.
- *
- * checks if we have an active mobile menu
- * if active mobile, sets it, if not, default to primary
- *
- * @access public
- * @return void
- */
-function emdotnet_mobile_navigation_setup() {
-	$html=null;
-
-	if (has_nav_menu('mobile')) :
-		$location='mobile';
-	else :
-		$location='primary';
-	endif;
-
-	$location=apply_filters('emdotnet_mobile_navigation_setup_location',$location);
-
-	if ($location=='primary' && !has_nav_menu($location))
-		return false;
-
-	$html.='<div id="emdotnet-mobile-nav" class="collapse navbar-collapse emdotnet-mobile-menu hidden-sm hidden-md hidden-lg">';
-
-		$html.=wp_nav_menu(array(
-			'theme_location' => $location,
-			'container' => 'div',
-			'container_class' => 'panel-group navbar-nav',
-			'container_id' => 'accordion',
-			'echo' => false,
-			//'items_wrap'=>'%3$s',
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new emdotnetMobileNavWalker()
-		));
-
-	$html.='</div><!-- .emdotnet-theme-mobile-menu -->';
-
-	echo $html;
-}
-
-/**
- * emdotnet_secondary_navigation_setup function.
- *
- * if our secondary menu is set, this shows it
- *
- * @access public
- * @return void
- */
-function emdotnet_secondary_navigation_setup() {
-	$html=null;
-
-	if (!has_nav_menu('secondary'))
-		return false;
-
-	$html.='<div class="collapse navbar-collapse secondary-menu">';
-		$html.=wp_nav_menu(array(
-			'theme_location' => 'secondary',
-			'container' => false,
-			'menu_class' => 'nav navbar-nav pull-right secondary',
-			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new wp_bootstrap_navwalker()
-		));
-	$html.='</div> <!-- .secondary-menu -->';
-
-	echo $html;
+    // display header image or text //
+    if ( get_header_image() ) :
+        echo '<img src="' . get_header_image() . '" height="' . get_custom_header()->height . '" width="' . get_custom_header()->width . '" alt="" />';
+    else :
+        echo '<a class="navbar-brand" href="' . home_url() . '">' . $text . '</a>';
+    endif;
 }
 
 /**
@@ -498,13 +411,13 @@ function emdotnet_secondary_navigation_setup() {
  * @return void
  */
 function emdotnet_back_to_top() {
-	$html=null;
+    $html = null;
 
-	$html.='<a href="#0" class="emdotnet-back-to-top"></a>';
+    $html .= '<a href="#0" class="emdotnet-back-to-top"></a>';
 
-	echo $html;
+    echo $html;
 }
-add_action('wp_footer','emdotnet_back_to_top');
+add_action( 'wp_footer', 'emdotnet_back_to_top' );
 
 /**
  * emdotnet_wp_parse_args function.
@@ -516,31 +429,19 @@ add_action('wp_footer','emdotnet_back_to_top');
  * @param mixed $b
  * @return void
  */
-function emdotnet_wp_parse_args(&$a,$b) {
-	$a = (array) $a;
-	$b = (array) $b;
-	$result = $b;
-	foreach ( $a as $k => &$v ) {
-		if ( is_array( $v ) && isset( $result[ $k ] ) ) {
-			$result[ $k ] = emdotnet_wp_parse_args( $v, $result[ $k ] );
-		} else {
-			$result[ $k ] = $v;
-		}
-	}
-	return $result;
+function emdotnet_wp_parse_args( &$a, $b ) {
+    $a = (array) $a;
+    $b = (array) $b;
+    $result = $b;
+    foreach ( $a as $k => &$v ) {
+        if ( is_array( $v ) && isset( $result[ $k ] ) ) {
+            $result[ $k ] = emdotnet_wp_parse_args( $v, $result[ $k ] );
+        } else {
+            $result[ $k ] = $v;
+        }
+    }
+    return $result;
 }
-
-/**
- * Initialize theme updater function. Utalizes the theme-update-checker.php file in theme-updates
- * Develpoed by W-Shadow (http://w-shadow.com/blog/2011/06/02/automatic-updates-for-commercial-themes/)
- */
-/*
-require_once(get_template_directory().'/inc/theme-updates/theme-update-checker.php');
-$update_checker = new ThemeUpdateChecker(
-	'mdw-wp-theme',
-	'http://www.millerdesignworks.com/mdw-wp-themes/mdw-wp-theme.json'
-);
-*/
 
 /***** PORTFOLIO *****/
 
@@ -551,12 +452,12 @@ $update_checker = new ThemeUpdateChecker(
  * @param mixed $classes
  * @return void
  */
-function edm_customfilter_grid_classes($classes) {
-	$classes.='edm-portfolio-grid';
+function edm_customfilter_grid_classes( $classes ) {
+    $classes .= 'edm-portfolio-grid';
 
-	return $classes;
+    return $classes;
 }
-add_filter('customfilter_grid_classes','edm_customfilter_grid_classes');
+add_filter( 'customfilter_grid_classes', 'edm_customfilter_grid_classes' );
 
 /**
  * filter_item_output function.
@@ -566,25 +467,25 @@ add_filter('customfilter_grid_classes','edm_customfilter_grid_classes');
  * @param mixed $post
  * @return void
  */
-function filter_item_output($default_output,$post) {
-	$html=null;
+function filter_item_output( $default_output, $post ) {
+    $html = null;
 
-	if (has_post_thumbnail($post->ID)) :
-		$thumb='<a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID,'project-home-thumb').'</a>';
-	else:
-		$thumb='<a href="'.get_permalink($post->ID).'"><img src="http://placehold.it/350x150" class="img-responsive"></a>';
-	endif;
+    if ( has_post_thumbnail( $post->ID ) ) :
+        $thumb = '<a href="' . get_permalink( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, 'project-home-thumb' ) . '</a>';
+    else :
+        $thumb = '<a href="' . get_permalink( $post->ID ) . '"><img src="http://placehold.it/350x150" class="img-responsive"></a>';
+    endif;
 
-	$html.='<div class="project" id="post-'.$post->ID.'">';
-		$html.=$thumb;
-		$html.='<a href="'.get_permalink($post->ID).'"><h3>'.get_the_title($post->ID).'</h3></a>';
-		$html.=get_post_excerpt_by_id($post->ID,45,'','...');
-		$html.='<p><a href="'.get_permalink().'" class="btn btn-primary">Read More</a></p>';
-	$html.='</div>';
+    $html .= '<div class="project" id="post-' . $post->ID . '">';
+        $html .= $thumb;
+        $html .= '<a href="' . get_permalink( $post->ID ) . '"><h3>' . get_the_title( $post->ID ) . '</h3></a>';
+        $html .= get_post_excerpt_by_id( $post->ID, 45, '', '...' );
+        $html .= '<p><a href="' . get_permalink() . '" class="btn btn-primary">Read More</a></p>';
+    $html .= '</div>';
 
-	return $html;
+    return $html;
 }
-add_filter('customfilter_item_output','filter_item_output',10,2);
+add_filter( 'customfilter_item_output', 'filter_item_output', 10, 2 );
 
 /**
  * get_terms_list function.
@@ -593,35 +494,37 @@ add_filter('customfilter_item_output','filter_item_output',10,2);
  * @param bool $term (default: false)
  * @return void
  */
-function get_terms_list($term=false) {
-	if (!$term)
-		return false;
+function get_terms_list( $term = false ) {
+    if ( ! $term ) {
+        return false;
+    }
 
-	$args=array(
-		'orderby' => 'name',
-		'order' => 'ASC',
-		'hide_empty' => false
-	);
-	$terms=get_terms($term,$args);
-	$html=null;
+    $args = array(
+        'orderby' => 'name',
+        'order' => 'ASC',
+        'hide_empty' => false,
+    );
+    $terms = get_terms( $term, $args );
+    $html = null;
 
-	if (!count($terms))
-		return false;
+    if ( ! count( $terms ) ) {
+        return false;
+    }
 
-	$html.='<div class="term-wrapper term-'.$term.'">';
-		$html.='<h3 class="title">'.ucwords($term).'</h3>';
-		$html.='<ul class="term-list term-list-'.$term.'">';
-			foreach ($terms as $t) :
-				if ($t->count) :
-					$html.='<li id="term-'.$t->term_id.'"><a href="/portfolio#'.$t->slug.'">'.$t->name.'</a></li>';
-				else :
-					$html.='<li id="term-'.$t->term_id.'">'.$t->name.'</li>';
-				endif;
-			endforeach;
-		$html.='</ul>';
-	$html.='</div>';
+    $html .= '<div class="term-wrapper term-' . $term . '">';
+        $html .= '<h3 class="title">' . ucwords( $term ) . '</h3>';
+        $html .= '<ul class="term-list term-list-' . $term . '">';
+    foreach ( $terms as $t ) :
+        if ( $t->count ) :
+            $html .= '<li id="term-' . $t->term_id . '"><a href="/portfolio#' . $t->slug . '">' . $t->name . '</a></li>';
+        else :
+            $html .= '<li id="term-' . $t->term_id . '">' . $t->name . '</li>';
+        endif;
+            endforeach;
+        $html .= '</ul>';
+    $html .= '</div>';
 
-	return $html;
+    return $html;
 }
 
 /**
@@ -629,39 +532,36 @@ function get_terms_list($term=false) {
  *
  * @access public
  * @param string $post_type (default: 'portfolio')
- * @param int $limit (default: 6)
+ * @param int    $limit (default: 6)
  * @return void
  */
-function get_home_projects($post_type='portfolio',$limit=6) {
-	$html=null;
-	$args=array(
-		'posts_per_page' => $limit,
-		'orderby' => 'rand',
-		'post_type' => $post_type
-	);
-	$posts=get_posts($args);
+function get_home_projects( $post_type = 'portfolio', $limit = 6 ) {
+    $html = null;
+    $args = array(
+        'posts_per_page' => $limit,
+        'orderby' => 'rand',
+        'post_type' => $post_type,
+    );
+    $posts = get_posts( $args );
 
-	if (!count($posts))
-		return false;
+    if ( ! count( $posts ) ) {
+        return false;
+    }
 
-	foreach ($posts as $post) :
-		if (has_post_thumbnail($post->ID)) :
-			$thumb='<a href="'.get_permalink($post->ID).'">'.get_the_post_thumbnail($post->ID,'project-home-thumb').'</a>';
-		else:
-			$thumb='<a href="'.get_permalink($post->ID).'"><img src="http://placehold.it/555x555" class="img-responsive"></a>';
-		endif;
+    foreach ( $posts as $post ) :
+        if ( has_post_thumbnail( $post->ID ) ) :
+            $thumb = '<a href="' . get_permalink( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, 'project-home-thumb' ) . '</a>';
+        else :
+            $thumb = '<a href="' . get_permalink( $post->ID ) . '"><img src="http://placehold.it/555x555" class="img-responsive"></a>';
+        endif;
 
-		$html.='<div class="col-md-4 project-wrap">';
-			$html.='<div class="project" id="post-'.$post->ID.'">';
-				$html.=$thumb;
-				$html.='<a href="'.get_permalink($post->ID).'"><div class="title"><h3>'.get_the_title($post->ID).'</h3></div></a>';
-				//$html.=get_post_excerpt_by_id($post->ID,45,'','...');
-				//$html.='<p><a href="'.get_permalink($post->ID).'" class="btn btn-primary">Read More</a></p>';
-			$html.='</div>';
-		$html.='</div><!-- .col-md-4 -->';
-	endforeach;
+        $html .= '<div class="project" id="post-' . $post->ID . '">';
+            $html .= $thumb;
+            $html .= '<a href="' . get_permalink( $post->ID ) . '"><div class="title"><h3>' . get_the_title( $post->ID ) . '</h3></div></a>';
+        $html .= '</div>';
+    endforeach;
 
-	return $html;
+    return $html;
 }
 
 /**
@@ -672,30 +572,27 @@ function get_home_projects($post_type='portfolio',$limit=6) {
  * @param bool $title (default: false)
  * @return void
  */
-function get_page_content($post_id=false,$title=false) {
-	if (!$post_id)
-		return false;
+function get_page_content( $post_id = false, $title = false ) {
+    if ( ! $post_id ) {
+        return false;
+    }
 
-	$html=null;
-	$post=get_post($post_id);
-	$thumb='<i class="fa fa-user"></i>';
+    $html = null;
+    $post = get_post( $post_id );
+    $thumb = '<i class="fa fa-user"></i>';
 
-	if (!$title)
-		$title=get_the_title($post->ID);
+    if ( ! $title ) {
+        $title = get_the_title( $post->ID );
+    }
 
-	if (has_post_thumbnail($post->ID))
-		$thumb=get_the_post_thumbnail($post->ID);
+    $html .= '<div class="page-content-function">';
+        $html .= '<div class="content">';
+            $html .= '<h2 class="title">' . $title . '</h2>';
+            $html .= apply_filters( 'the_content', $post->post_content );
+        $html .= '</div>';
+    $html .= '</div>';
 
-
-	$html.='<div class="page-content-function">';
-		$html.='<div class="content">';
-			$html.='<h2 class="title">'.$title.'</h2>';
-			$html.='<div class="image">'.$thumb.'</div>';
-			$html.=apply_filters('the_content', $post->post_content);
-		$html.='</div>';
-	$html.='</div>';
-
-	return $html;
+    return $html;
 }
 
 /**
@@ -705,94 +602,105 @@ function get_page_content($post_id=false,$title=false) {
  * @param mixed $atts
  * @return void
  */
-function shortcode_page_content($atts) {
-	$atts=extract(shortcode_atts( array(
-		'id' => false,
-		'title' => false
-	), $atts, 'page-content'));
+function shortcode_page_content( $atts ) {
+    $atts = extract(
+        shortcode_atts(
+            array(
+                'id' => false,
+                'title' => false,
+            ),
+            $atts,
+            'page-content'
+        )
+    );
 
-	return get_page_content($id,$title);
+    return get_page_content( $id, $title );
 }
-add_shortcode('page-content','shortcode_page_content');
+add_shortcode( 'page-content', 'shortcode_page_content' );
 
 /**
  * Gets the excerpt of a specific post ID or object
+ *
  * @param - $post - object/int - the ID or object of the post to get the excerpt of
  * @param - $length - int - the length of the excerpt in words
  * @param - $tags - string - the allowed HTML tags. These will not be stripped out
  * @param - $extra - string - text to append to the end of the excerpt
  */
-function get_post_excerpt_by_id($post, $length = 10, $tags = '<a><em><strong>', $extra = ' . . .') {
+function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>', $extra = ' . . .' ) {
 
-	if(is_int($post)) {
-		// get the post object of the passed ID
-		$post = get_post($post);
-	} elseif(!is_object($post)) {
-		return false;
-	}
+    if ( is_int( $post ) ) {
+        // get the post object of the passed ID
+        $post = get_post( $post );
+    } elseif ( ! is_object( $post ) ) {
+        return false;
+    }
 
-	if(has_excerpt($post->ID)) {
-		$the_excerpt = $post->post_excerpt;
-		return apply_filters('the_content', $the_excerpt);
-	} else {
-		$the_excerpt = $post->post_content;
-	}
+    if ( has_excerpt( $post->ID ) ) {
+        $the_excerpt = $post->post_excerpt;
+        return apply_filters( 'the_content', $the_excerpt );
+    } else {
+        $the_excerpt = $post->post_content;
+    }
 
-	$the_excerpt = strip_shortcodes(strip_tags($the_excerpt), $tags);
-	$the_excerpt = preg_split('/\b/', $the_excerpt, $length * 2+1);
-	$excerpt_waste = array_pop($the_excerpt);
-	$the_excerpt = implode($the_excerpt);
-	$the_excerpt .= $extra;
+    $the_excerpt = strip_shortcodes( strip_tags( $the_excerpt ), $tags );
+    $the_excerpt = preg_split( '/\b/', $the_excerpt, $length * 2 + 1 );
+    $excerpt_waste = array_pop( $the_excerpt );
+    $the_excerpt = implode( $the_excerpt );
+    $the_excerpt .= $extra;
 
-	return apply_filters('the_content', $the_excerpt);
+    return apply_filters( 'the_content', $the_excerpt );
 }
 
 /**
  * get_portfolio_sidebar function.
  *
  * @access public
- * @param bool $post_id (default: false)
- * @param string $taxonomies (default: array('skills')
+ * @param bool              $post_id (default: false)
+ * @param string            $taxonomies (default: array('skills')
  * @param mixed 'services')
  * @return void
  */
-function get_portfolio_sidebar($post_id=false,$taxonomies=array('skills','services')) {
-	if (!$post_id)
-		return false;
+function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills', 'services' ) ) {
+    if ( ! $post_id ) {
+        return false;
+    }
 
-	$html=null;
+    $html = null;
 
-	$html.='<div class="project-details">';
-		$html.='<h3 class="project-details-title">Project Details</h3>';
-		$html.='<ul class="project-details-list">';
-			if (get_post_meta($post_id,'_project_details_client',true))
-				$html.='<li class="client"><span class="header">Client:</span> '.get_post_meta($post_id,'_project_details_client',true).'</li>';
+    $html .= '<div class="project-details">';
+        $html .= '<h3 class="project-details-title">Project Details</h3>';
+        $html .= '<ul class="project-details-list">';
+    if ( get_post_meta( $post_id, '_project_details_client', true ) ) {
+        $html .= '<li class="client"><span class="header">Client:</span> ' . get_post_meta( $post_id, '_project_details_client', true ) . '</li>';
+    }
 
-			if (get_post_meta($post_id,'_project_details_date',true))
-				$html.='<li class="date"><span class="header">Completed:</span> '.date('F Y',strtotime(get_post_meta($post_id,'_project_details_date',true))).'</li>';
+    if ( get_post_meta( $post_id, '_project_details_date', true ) ) {
+        $html .= '<li class="date"><span class="header">Completed:</span> ' . date( 'F Y', strtotime( get_post_meta( $post_id, '_project_details_date', true ) ) ) . '</li>';
+    }
 
-			if (get_post_meta($post_id,'_project_details_url',true))
-				$html.='<li class="url"><span class="header">URL:</span> <a href="'.get_post_meta($post_id,'_project_details_url',true).'" target="_blank">'.get_post_meta($post_id,'_project_details_url',true).'</a></li>';
+    if ( get_post_meta( $post_id, '_project_details_url', true ) ) {
+        $html .= '<li class="url"><span class="header">URL:</span> <a href="' . get_post_meta( $post_id, '_project_details_url', true ) . '" target="_blank">' . get_post_meta( $post_id, '_project_details_url', true ) . '</a></li>';
+    }
 
-		$html.='</ul>';
+        $html .= '</ul>';
 
-		foreach ($taxonomies as $tax) :
-			$tax_details=get_taxonomy($tax);
-			$terms=get_the_terms($post_id,$tax);
+    foreach ( $taxonomies as $tax ) :
+        $tax_details = get_taxonomy( $tax );
+        $terms = get_the_terms( $post_id, $tax );
 
-			if (is_array($terms)) :
-				$html.='<h5>'.$tax_details->labels->name.'</h5>';
-				$html.='<ul class="'.$tax.'">';
-					foreach ($terms as $term) :
-						$html.='<li><a href="/projects#'.$term->slug.'">'.$term->name.'</a></li>';
-					endforeach;
-				$html.='</ul>';
-			endif;
-		endforeach;
+        if ( is_array( $terms ) ) :
+            $html .= '<h5>' . $tax_details->labels->name . '</h5>';
+            $html .= '<ul class="' . $tax . '">';
+            foreach ( $terms as $term ) :
+                $html .= '<li><a href="/projects#' . $term->slug . '">' . $term->name . '</a></li>';
+                endforeach;
+                $html .= '</ul>';
+            endif;
+        endforeach;
 
-	$html.='</div>';
+    $html .= '</div>';
 
-	return $html;
+    return $html;
 }
 
 /**
@@ -802,20 +710,20 @@ function get_portfolio_sidebar($post_id=false,$taxonomies=array('skills','servic
  * @param string $title (default: 'Social Media')
  * @return void
  */
-function get_social_media($title='Social Media') {
-	$html=null;
-	$sm_options=get_option('social_media_options');
+function get_social_media( $title = 'Social Media' ) {
+    $html = null;
+    $sm_options = get_option( 'social_media_options' );
 
-	$html.='<h3>'.$title.'</h3>';
-	$html.='<ul class="social-media">';
-		foreach ($sm_options as $sm_id => $sm) :
-			$html.='<li id="sm-'.$sm_id.'">';
-				$html.='<a href="'.$sm['url'].'"><i class="fa '.$sm['icon'].'"></i></a>';
-			$html.='</li>';
-		endforeach;
-	$html.='</ul>';
+    $html .= '<h3>' . $title . '</h3>';
+    $html .= '<ul class="social-media">';
+    foreach ( $sm_options as $sm_id => $sm ) :
+        $html .= '<li id="sm-' . $sm_id . '">';
+            $html .= '<a href="' . $sm['url'] . '"><i class="fa ' . $sm['icon'] . '"></i></a>';
+        $html .= '</li>';
+        endforeach;
+    $html .= '</ul>';
 
-	return $html;
+    return $html;
 }
 
 /**
@@ -825,29 +733,30 @@ function get_social_media($title='Social Media') {
  * @param array $args (default: array())
  * @return void
  */
-function em_get_plugins($args=array()) {
-	$html=null;
-	$default_args=array(
-		'posts_per_page' => -1,
-		'post_type' => 'plugins'
-	);
-	$args=array_merge($default_args,$args);
-	$posts=get_posts($args);
+function em_get_plugins( $args = array() ) {
+    $html = null;
+    $default_args = array(
+        'posts_per_page' => -1,
+        'post_type' => 'plugins',
+    );
+    $args = array_merge( $default_args, $args );
+    $posts = get_posts( $args );
 
-	if (!count($posts))
-		return false;
+    if ( ! count( $posts ) ) {
+        return false;
+    }
 
-	foreach ($posts as $post) :
-		$html.='<article id="plugin-'.$post->ID.'" class="plugin">';
-			$html.='<h3>'.get_the_title($post->ID).'</h3>';
-			$html.=get_the_post_thumbnail($post->ID,'thumbnail');
-			$html.='<div class="description">';
-				$html.=apply_filters('the_content',$post->post_content);
-			$html.='</div>';
-		$html.='</article><!-- .plugin -->';
-	endforeach;
+    foreach ( $posts as $post ) :
+        $html .= '<article id="plugin-' . $post->ID . '" class="plugin">';
+            $html .= '<h3>' . get_the_title( $post->ID ) . '</h3>';
+            $html .= get_the_post_thumbnail( $post->ID, 'thumbnail' );
+            $html .= '<div class="description">';
+                $html .= apply_filters( 'the_content', $post->post_content );
+            $html .= '</div>';
+        $html .= '</article><!-- .plugin -->';
+    endforeach;
 
-	return $html;
+    return $html;
 }
 
 /**
@@ -857,8 +766,8 @@ function em_get_plugins($args=array()) {
  * @param array $args (default: array())
  * @return void
  */
-function display_plugins($args=array()) {
-	echo em_get_plugins($args);
+function display_plugins( $args = array() ) {
+    echo em_get_plugins( $args );
 }
 
 /**
@@ -868,9 +777,10 @@ function display_plugins($args=array()) {
  * @param int $post_id (default: 0)
  * @return void
  */
-function em_check_for_mdw($post_id=0) {
-	$post_tags=wp_get_post_tags($post_id, array('fields' => 'slugs'));
+function em_check_for_mdw( $post_id = 0 ) {
+    $post_tags = wp_get_post_tags( $post_id, array( 'fields' => 'slugs' ) );
 
-	if (in_array('mdw', $post_tags))
-		echo '<strong>This project was done while working at Miller Designworks</strong>';
+    if ( in_array( 'mdw', $post_tags ) ) {
+        echo '<strong>This project was done while working at Miller Designworks</strong>';
+    }
 }
