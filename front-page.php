@@ -5,11 +5,11 @@
 ?>
 <?php get_header(); ?>
 
-	<div class="container-full banner">
+	<div class="banner">
 		<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cobbles.jpg" />
 	</div>
 
-	<div class="container-fluid tools-i-use">
+	<div class="tools-i-use">
 		<div class="container">
 			<div class="col-md-4 tools-block">
 				<div class="icon"><i class="fa fa-wordpress"></i></div>
@@ -29,13 +29,13 @@
 		</div>
 	</div>
 
-	<div class="container-fluid home-feature">
+	<div class="home-feature">
 		<div class="container projects">
 			<?php echo get_home_projects('projects'); ?>
 		</div><!-- .container -->
 	</div>
 
-	<div class="container-fluid home-about">
+	<div class="home-about">
 		<div class="container">
 			<div class="col-md-12">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
