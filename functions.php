@@ -388,26 +388,6 @@ function emdotnet_theme_navbar_brand() {
 }
 
 /**
- * emdotnet_theme_special_nav_classes function.
- *
- * allows us to add more specific classes to the wp nav menu
- * more specifically, we can add a logo class depending on theme options
- *
- * @access public
- * @param mixed $args
- * @return void
- */
-function emdotnet_theme_special_nav_classes($args) {
-	global $emdotnet_theme_options;
-
-	if (isset($emdotnet_theme_options['default']['logo']['image']) && $emdotnet_theme_options['default']['logo']['image']!='')
-		$args['menu_class'].=' logo';
-
-	return $args;
-}
-add_filter('wp_nav_menu_args','emdotnet_theme_special_nav_classes',10,1);
-
-/**
  * emdotnet_back_to_top function.
  *
  * @access public
