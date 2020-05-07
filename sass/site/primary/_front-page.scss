@@ -66,3 +66,28 @@
         }        
     }
 }
+
+/* about */
+.home-about {
+    padding: 0 30px;
+    background: #ccc;
+    
+    .page-content-function {
+        @include column-width(2);
+        margin: 0 auto;
+         
+        .content {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 30px;
+            
+            .title {
+                text-align: center;
+            }
+            
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

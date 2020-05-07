@@ -585,14 +585,9 @@ function get_page_content( $post_id = false, $title = false ) {
         $title = get_the_title( $post->ID );
     }
 
-    if ( has_post_thumbnail( $post->ID ) ) {
-        $thumb = get_the_post_thumbnail( $post->ID );
-    }
-
     $html .= '<div class="page-content-function">';
         $html .= '<div class="content">';
             $html .= '<h2 class="title">' . $title . '</h2>';
-            $html .= '<div class="image">' . $thumb . '</div>';
             $html .= apply_filters( 'the_content', $post->post_content );
         $html .= '</div>';
     $html .= '</div>';
