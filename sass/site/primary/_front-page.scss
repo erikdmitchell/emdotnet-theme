@@ -25,10 +25,6 @@
 	   	
     .project {
         position: relative;
-    	display: inline-block;
-    	width: 100%;
-    	@include column-width(3);
-    	margin-right: 3.8%;
     	margin-top: 30px;
     	
     	&:nth-child(3n) {
@@ -71,9 +67,6 @@
     background: #ccc;
     
     .page-content-function {
-        @include column-width(2);
-        margin: 0 auto;
-         
         .content {
             width: 100%;
             padding-top: 15px;
