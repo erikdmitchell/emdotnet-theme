@@ -1,13 +1,19 @@
 .site-header {
     padding: 30px 15px;
     overflow: hidden;
-    
+     
     .site-branding {
-        float: left;
+        .navbar-brand {
+            color: #777;
+            float: left;
+            font-size: 18px;
+            line-height: 20px;
+            text-decoration: none;
+        }
     }
     
     .main-navigation {
         float: right;
-        width: auto;
+        width: auto;        
     }
 }
