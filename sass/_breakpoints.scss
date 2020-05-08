@@ -1,13 +1,16 @@
-$breakpoints: (mobile: 0px,
-  tablet: 768px,
-  notablet: 768px,
-  nodesktop: 991px,
-  desktop: 992px,
-  desktop-m: 1200px,
-  desktop-w: 1350px,
-  desktop-w2: 1400px,
-  desktop-l: 1500px,
-  desktop-uw: 1690px);
+$breakpoints: (
+    mobile: 0px,
+    tablet-s: 576px,
+    tablet: 768px,
+    notablet: 768px,
+    nodesktop: 991px,
+    desktop: 992px,
+    desktop-m: 1200px,
+    desktop-w: 1350px,
+    desktop-w2: 1400px,
+    desktop-l: 1500px,
+    desktop-uw: 1690px
+);
 
 @mixin bp($breakpoint) {
 
@@ -31,8 +34,6 @@ $breakpoints: (mobile: 0px,
 }
 
 //reverse Breakpoints with max width
-
-
 @mixin rbp($breakpoint) {
 
   // If the breakpoint exists in the map.

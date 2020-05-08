@@ -1,10 +1,27 @@
 /*
-  
-container
-container fullwidth
-max width
-breakpoints
 
 columns -- for responsiveness
     
 */
+
+.container {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    @include bp(tablet-s) {
+        max-width: 540px;
+    }
+    
+    @include bp(tablet) {
+        max-width: 720px;
+    }
+    
+    @include bp(desktop) {
+        max-width: 960px;
+    }
+    
+    @include bp(desktop-m) {
+        max-width: 1140px;
+    }  
+}
