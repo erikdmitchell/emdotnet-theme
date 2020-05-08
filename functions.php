@@ -538,7 +538,7 @@ function get_home_projects( $post_type = 'portfolio', $limit = 6 ) {
             $thumb = '<a href="' . get_permalink( $post->ID ) . '"><img src="http://placehold.it/555x555" class="img-responsive"></a>';
         endif;
 
-        $html .= '<div class="project" id="post-' . $post->ID . '">';
+        $html .= '<div class="em-col-3 project" id="post-' . $post->ID . '">';
             $html .= $thumb;
             $html .= '<a href="' . get_permalink( $post->ID ) . '"><div class="title"><h3>' . get_the_title( $post->ID ) . '</h3></div></a>';
         $html .= '</div>';

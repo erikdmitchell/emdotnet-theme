@@ -32,7 +32,7 @@
     </div>
 
     <div class="em-container">
-        <div class="home-feature-projects">
+        <div class="em-row home-feature-projects">
             <?php echo get_home_projects( 'projects' ); ?>
         </div>
     </div>
