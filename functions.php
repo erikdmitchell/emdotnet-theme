@@ -80,11 +80,6 @@ function emdotnet_theme_setup() {
     include_once( get_template_directory() . '/inc/admin/init.php' );
 
     /**
-     * include theme slider class
-     */
-    include_once( get_template_directory() . '/inc/slider.php' );
-
-    /**
      * include theme meta page
      * allows users to hook and filter into the default meta tags in the header
      */
