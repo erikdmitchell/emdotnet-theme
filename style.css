@@ -885,7 +885,7 @@ a:hover, a:active {
 ## Front page
 --------------------------------------------------------------*/
 .banner {
-  max-height: 400px;
+  max-height: 300px;
   overflow: hidden;
 }
 
