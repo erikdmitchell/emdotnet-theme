@@ -702,6 +702,7 @@ a:hover, a:active {
   top: 100%;
   left: -999em;
   z-index: 99999;
+  padding: 5px;
 }
 
 .main-navigation ul ul ul {
@@ -732,6 +733,18 @@ a:hover, a:active {
   display: block;
   text-decoration: none;
   padding-right: 15px;
+  color: #000;
+}
+
+.main-navigation a:hover {
+  color: #777;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+  color: #777;
 }
 
 /* Small menu. */
@@ -872,8 +885,12 @@ a:hover, a:active {
   overflow: hidden;
 }
 
-.site-header .site-branding {
+.site-header .site-branding .navbar-brand {
+  color: #777;
   float: left;
+  font-size: 18px;
+  line-height: 20px;
+  text-decoration: none;
 }
 
 .site-header .main-navigation {
