@@ -9,8 +9,8 @@
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cobbles.jpg" />
     </div>
 
-    <div class="container">
-        <div class="tools-i-use">
+    <div class="tools-i-use">
+        <div class="container">
             <div class="tools-block">
                 <div class="icon"><i class="fab fa-wordpress"></i></div>
                 <h2 class="title">WordPress</h2>
@@ -29,14 +29,18 @@
         </div>
     </div>
 
-    <div class="home-feature-projects">
-        <?php echo get_home_projects( 'projects' ); ?>
+    <div class="container">
+        <div class="home-feature-projects">
+            <?php echo get_home_projects( 'projects' ); ?>
+        </div>
     </div>
 
     <div class="home-about">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <?php the_content(); ?>
-        <?php endwhile; endif; ?>
+        <div class="container">
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <?php the_content(); ?>
+            <?php endwhile; endif; ?>
+        </div>
     </div>
 
 <?php
