@@ -10,12 +10,8 @@
 	padding-bottom: 15px;
 
     .tools-block {
-    	display: inline-block;
     	text-align: center;
-    	width: 100%;
-    	@include column-width(5);
-    	margin-right: 3.8%;
-    
+    	
         .fa,
         .fab {
             font-size: 65px;
