@@ -61,6 +61,8 @@ $columns__margin: 3.8%;
 .em-col-3 {
     flex: 0 0 100%;
     max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     
     @include bp(tablet) {
         flex: 0 0 33.333333%;
