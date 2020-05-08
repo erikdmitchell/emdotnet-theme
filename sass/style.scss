@@ -16,6 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Layout
+# Breakpoints
 # Elements
 # Forms
 # Navigation
@@ -25,8 +27,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 # Alignments
 # Widgets
 # Content
+    ## Header
+    ## Front page
 	## Posts and pages
 	## Comments
+	## Projects
+	## Footer
 # Infinite scroll
 # Media
 	## Captions
@@ -44,6 +50,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout";
+
+/*--------------------------------------------------------------
+# Breakpoints
+--------------------------------------------------------------*/
+@import "breakpoints";
 
 /*--------------------------------------------------------------
 # Elements

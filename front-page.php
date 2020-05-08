@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-    <div class="banner">
+    <div class="banner fullwidth">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cobbles.jpg" />
     </div>
 
