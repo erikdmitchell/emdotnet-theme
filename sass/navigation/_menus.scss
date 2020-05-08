@@ -61,12 +61,21 @@
 		display: block;
 		text-decoration: none;
 		padding-right: 15px;
+		color: #000;
+		
+		&:hover {
+    		color: #777;
+		}
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+	}
+	
+	.current-menu-item > a {
+    	color: #777;
 	}
 }
 
