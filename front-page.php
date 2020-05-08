@@ -12,7 +12,7 @@
     <div class="tools-i-use">
         <div class="tools-block"></div>
         <div class="tools-block">
-            <div class="icon"><i class="fa fa-wordpress"></i></div>
+            <div class="icon"><i class="fab fa-wordpress"></i></div>
             <h2 class="title">WordPress</h2>
             <p>Currently powering 25% of the web, WordPress is web software that can be used to create beautiful and powerful websites, apps and virtually anything you can imagine.</p>
         </div>
