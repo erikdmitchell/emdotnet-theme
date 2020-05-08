@@ -1,5 +1,5 @@
 .banner {
-    max-height: 400px;
+    max-height: 300px;
     overflow: hidden;
 }
 
@@ -16,7 +16,8 @@
     	@include column-width(5);
     	margin-right: 3.8%;
     
-        .fa {
+        .fa,
+        .fab {
             font-size: 65px;
         }
     }
@@ -27,6 +28,7 @@
 	margin: 15px 30px;
 	   	
     .project {
+        position: relative;
     	display: inline-block;
     	width: 100%;
     	@include column-width(3);
@@ -56,7 +58,7 @@
         	top: 0;
         	background: rgba(58, 58, 58, 0.70);
         	width: 100%;
-        	height: 100%;
+        	height: 99%;
         	
         	h3 {
                 position: relative;
