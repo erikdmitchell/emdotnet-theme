@@ -175,7 +175,7 @@ function emdotnet_theme_scripts() {
     // enqueue our scripts for slider and theme
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
-    wp_enqueue_script( 'emdotnet-theme-script', get_template_directory_uri() . '/inc/js/emdotnet-theme.js', array( 'jquery' ), '1.2.0', true );
+    wp_enqueue_script( 'emdotnet-theme-script', get_template_directory_uri() . '/js/emdotnet-theme.min.js', array( 'jquery' ), '1.2.0', true );
 
     if ( is_singular() ) :
         wp_enqueue_script( 'comment-reply' );
