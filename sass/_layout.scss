@@ -1,3 +1,6 @@
+/**
+ * Container
+ */
 .em-container {
     width: 100%;
     padding-left: 2rem;
@@ -22,11 +25,17 @@
     }  
 }
 
+/**
+ * Grid
+ */
 .em-row {
     display: flex;
     flex-wrap: wrap;
 }
 
+/**
+ * Columns
+ */
 .em-col {
     flex: 0 0 100%;
     max-width: 100%;    
@@ -128,3 +137,10 @@
     }
 }
 
+/**
+ * Offset
+ */
+
+.em-col-offset-1 {
+    margin-left: 8.333333%;    
+}

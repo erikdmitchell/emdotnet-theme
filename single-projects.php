@@ -30,7 +30,7 @@
             endwhile;
             ?>
         </div>
-        <div class="em-col-5">
+        <div class="em-col-offset-1 em-col-4">
             <?php echo get_portfolio_sidebar( get_the_ID() ); ?>
         </div>
     </div>
