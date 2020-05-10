@@ -1,10 +1,71 @@
 /*
-  
-container
-container fullwidth
-max width
-breakpoints
 
 columns -- for responsiveness
     
 */
+
+.em-container {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include bp(tablet-s) {
+        max-width: 540px;
+    }
+    
+    @include bp(tablet) {
+        max-width: 720px;
+    }
+    
+    @include bp(desktop) {
+        max-width: 960px;
+    }
+    
+    @include bp(desktop-m) {
+        max-width: 1140px;
+    }  
+}
+
+.em-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*
+$columns: (
+	1: 100%,
+	2: 50%,
+	3: 33.33%,
+	4: 25%,
+	5: 20%,
+	6: 16.66%,
+	7: 14.28%,
+	8: 12.5%,
+	9: 11.11%
+);
+
+$columns__margin: 3.8%;    
+*/
+.em-col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+    @include bp(tablet) {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.em-col-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
+    @include bp(tablet) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}

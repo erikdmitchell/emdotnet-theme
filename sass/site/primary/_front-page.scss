@@ -10,12 +10,8 @@
 	padding-bottom: 15px;
 
     .tools-block {
-    	display: inline-block;
     	text-align: center;
-    	width: 100%;
-    	@include column-width(5);
-    	margin-right: 3.8%;
-    
+    	
         .fa,
         .fab {
             font-size: 65px;
@@ -25,21 +21,11 @@
 
 /* projects */
 .home-feature-projects {
-	margin: 15px 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	   	
     .project {
         position: relative;
-    	display: inline-block;
-    	width: 100%;
-    	@include column-width(3);
-    	margin-right: 3.8%;
-    	margin-top: 30px;
-    	
-    	&:nth-child(3n) {
-        	margin-right: 0;
-    	}
-    	
-        img{}
         
         a {
             color: #fff;
@@ -75,9 +61,6 @@
     background: #ccc;
     
     .page-content-function {
-        @include column-width(2);
-        margin: 0 auto;
-         
         .content {
             width: 100%;
             padding-top: 15px;
