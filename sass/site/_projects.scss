@@ -3,7 +3,6 @@
  */
  .emdotnet-portfolio-wrapper {
     width: 100%;
-    margin-top: 30px;
 
     .filter-wrapper {
         .filter {
@@ -43,18 +42,21 @@
 
             a {
                 text-decoration: none;
-            }
+            }   
         }
     }
 }
 
-/* port single */
-.single-portfolio .post-thumbnail {
-	margin-bottom: 20px;
+/**
+ * portfolio (project) single
+ */
+.single-projects {
+    .project-thumb-wrap {
+        margin-bottom: 30px;
+    }
 }
 
-/* portfolio (project) single
------------------------------- */
+
 .project-details {
 
 }

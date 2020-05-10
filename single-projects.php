@@ -1,36 +1,24 @@
 <?php get_header(); ?>
 
-<div class="container-fluid red page-header">
-    <div class="container">
-        <div class="row">
-            <?php
-            while ( have_posts() ) :
-                the_post();
-                ?>
-                <div class="col-md-12">
-                    <header class="entry-header">
-                        <?php
-                        if ( is_single() ) :
-                            the_title( '<h1 class="page-title">', '</h1>' );
-                        else :
-                            the_title( '<h1 class="page-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-                        endif;
-                        ?>
-                    </header><!-- .entry-header -->
-                </div>
-            <?php endwhile; ?>
+<div class="page-header">
+    <div class="em-container">
+        <div class="em-row">
+            <div class="em-col">
+                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="em-container">
+    <div class="em-row project-thumb-wrap">
+        <div class="em-col">
             <?php emdotnet_theme_post_thumbnail( 'project-single-thumb' ); ?>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-8">
+    
+    <div class="em-row">
+        <div class="em-col-7">
             <?php
             // Start the Loop.
             while ( have_posts() ) :
@@ -42,10 +30,11 @@
             endwhile;
             ?>
         </div>
-        <div class="col-md-4">
+        <div class="em-col-5">
             <?php echo get_portfolio_sidebar( get_the_ID() ); ?>
         </div>
     </div>
-</div><!-- .container -->
+</div>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
