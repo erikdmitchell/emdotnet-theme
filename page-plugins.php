@@ -5,22 +5,22 @@
 ?>
 <?php get_header(); ?>
 
-<div class="container-fluid page-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+<div class="page-header">
+    <div class="em-container">
+        <div class="em-row">
+            <div class="em-col">
                 <h1 class="page-title">Plugins</h1>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="em-container">
+    <div class="em-row">
+        <div class="em-col">
             <?php display_plugins(); ?>
         </div>
     </div>
-</div><!-- .container -->
+</div>
 
-<?php get_footer(); ?>
+<?php get_footer();
