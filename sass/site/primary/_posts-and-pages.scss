@@ -30,6 +30,13 @@
     margin-top: 0;
     color: #000;
     margin-bottom: 30px;
+    
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 /** about page
