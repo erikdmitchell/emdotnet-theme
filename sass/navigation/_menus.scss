@@ -104,14 +104,22 @@
 
 	.nav-links {
 		display: flex;
+		margin-top: 15px;
 	}
 
-	.nav-previous {
+	.nav-previous,
+	.prev-post {
 		flex: 1 0 50%;
 	}
 
-	.nav-next {
+	.nav-next,
+	.next-post {
 		text-align: end;
 		flex: 1 0 50%;
+	}
+	
+	a {
+    	text-decoration: none;
+    	color: #000;
 	}
 }
