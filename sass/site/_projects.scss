@@ -54,14 +54,26 @@
     .project-thumb-wrap {
         margin-bottom: 30px;
     }
+
+    .project-details-list {
+        padding-left: 1rem;
+    	list-style-type: none;
+    	margin: 0;
+    }
+    
+    .project-details > .skills,
+    .project-details > .services {
+    	list-style-type: none;
+    	margin: 0;
+    	padding-left: 1rem;
+    }    
 }
 
 
 .project-details {
-
-}
-.project-details a {
-	color: #ed564b;
+    a {
+        color: #ed564b;
+    }
 }
 .project-details a:hover {
 	text-decoration: underline;
@@ -69,21 +81,14 @@
 h3.project-details-title {
 	margin-top: 0;
 }
-.project-details-list {
-	list-style-type: none;
-	margin: 0;
-}
+
 .project-details-list > li {
 
 }
 .project-details-list > li > .header {
 	font-weight: bold;
 }
-.project-details > .skills,
-.project-details > .services {
-	list-style-type: none;
-	margin: 0 0 0 10px;
-}
+
 .projects .entry-content,
 .project-details {
 	margin-top: 20px;

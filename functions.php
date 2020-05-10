@@ -672,7 +672,7 @@ function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills',
         $terms = get_the_terms( $post_id, $tax );
 
         if ( is_array( $terms ) ) :
-            $html .= '<h5>' . $tax_details->labels->name . '</h5>';
+            $html .= '<h4>' . $tax_details->labels->name . '</h4>';
             $html .= '<ul class="' . $tax . '">';
             foreach ( $terms as $term ) :
                 $html .= '<li><a href="/projects#' . $term->slug . '">' . $term->name . '</a></li>';
