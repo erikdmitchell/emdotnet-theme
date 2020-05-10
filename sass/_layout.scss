@@ -32,6 +32,30 @@
     max-width: 100%;    
 }
 
+.em-col-1 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
+    @include bp(tablet) {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+}
+
+.em-col-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
+    @include bp(tablet) {
+        flex: 0 0 16.666666%;
+        max-width: 16.666666%;
+    }
+}
+
 .em-col-3 {
     flex: 0 0 100%;
     max-width: 100%;
