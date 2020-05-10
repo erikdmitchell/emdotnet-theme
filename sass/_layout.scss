@@ -48,6 +48,11 @@ $columns: (
 
 $columns__margin: 3.8%;    
 */
+.em-col {
+    flex: 0 0 100%;
+    max-width: 100%;    
+}
+
 .em-col-4 {
     flex: 0 0 100%;
     max-width: 100%;

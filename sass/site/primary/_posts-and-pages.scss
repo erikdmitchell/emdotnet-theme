@@ -21,6 +21,16 @@
 	margin: 0 0 1.5em;
 }
 
+.page-header {
+    background: #ccc;
+    border: 0 solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    text-transform: uppercase;
+    margin-top: 0;
+    color: #000;
+}
+
 /** about page
 ---------------*/
 .term-list {
@@ -31,26 +41,6 @@
 .term-skills h3 {
 	margin-top: 0;
 }
-
-/** portfolio page
--------------------*/
-.filter-wrapper .filter li.active,
-.filter-wrapper .filter li.active a {
-	background: #ed564b;
-}
-.filter-wrapper a:link,
-.filter-wrapper a:visited {
-	color: #6f7779;
-}
-.filter-wrapper a:hover,
-.filter-wrapper a:active {
-	color: #ed564b;
-}
-/* port single */
-.single-portfolio .post-thumbnail {
-	margin-bottom: 20px;
-}
-
 /**
  * plugins page
 **/

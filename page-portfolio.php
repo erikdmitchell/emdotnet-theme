@@ -5,19 +5,19 @@
 ?>
 <?php get_header(); ?>
 
-<div class="container-fluid page-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+<div class="page-header">
+    <div class="em-container">
+        <div class="em-row">
+            <div class="em-col">
                 <h1 class="page-title">Portfolio</h1>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
+<div class="em-container">
+    <div class="em-row">
+        <div class="emdotnet-portfolio-wrapper">
             <?php
             if ( class_exists( 'CustomFilter' ) ) :
                 $config = array(
@@ -32,6 +32,6 @@
             ?>
         </div>
     </div>
-</div><!-- .container -->
+</div>
 
 <?php get_footer(); ?>

@@ -1,3 +1,58 @@
+/**
+ * portfolio (project) page
+ */
+ .emdotnet-portfolio-wrapper {
+    width: 100%;
+    margin-top: 30px;
+
+    .filter-wrapper {
+        .filter {
+            
+            li {
+                float: left;
+                
+                &.active {
+                    background: #ed564b;
+                        
+                    a {
+                        background: #ed564b;
+                        color: #fff;    
+                    }
+                }
+            }
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:link,
+        a:visited {
+        	color: #6f7779;    
+        }
+        
+        a:hover,
+        a:active {
+            color: #ed564b;    
+        }
+    }
+
+    #portfolio-grid {
+        .portfolio_item {
+            padding-right: 15px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* port single */
+.single-portfolio .post-thumbnail {
+	margin-bottom: 20px;
+}
+
 /* portfolio (project) single
 ------------------------------ */
 .project-details {
