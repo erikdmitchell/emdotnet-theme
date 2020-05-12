@@ -635,38 +635,66 @@ function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>',
 }
 
 /**
- * get_portfolio_sidebar function.
- *
+ * Get portfolio sidebar.
+ * 
  * @access public
- * @param bool              $post_id (default: false)
- * @param string            $taxonomies (default: array('skills')
- * @param mixed 'services')
- * @return void
+ * @param bool $post_id (default: false).
+ * @param string $taxonomies (default: array( 'skills', 'services' )).
+ * @param 'services' )
+ * @return bool/html
  */
 function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills', 'services' ) ) {
-    if ( ! $post_id ) {
+    if ( ! $post_id )
         return false;
-    }
-
-    $html = null;
+    
+    $html = '';
+    $client = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_client', 'client');
+    $date = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_date', 'date');
+    $url = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_url', 'url');
 
     $html .= '<div class="project-details">';
         $html .= '<h3 class="project-details-title">Project Details</h3>';
         $html .= '<ul class="project-details-list">';
-    if ( get_post_meta( $post_id, '_project_details_client', true ) ) {
-        $html .= '<li class="client"><span class="header">Client:</span> ' . get_post_meta( $post_id, '_project_details_client', true ) . '</li>';
-    }
+        
+            if ('' != $client) :
+                $html .= '<li class="client"><span class="header">Client:</span> ';
+                    $html .= $client;
+                $html .= '</li>';        
+            endif;
 
-    if ( get_post_meta( $post_id, '_project_details_date', true ) ) {
-        $html .= '<li class="date"><span class="header">Completed:</span> ' . date( 'F Y', strtotime( get_post_meta( $post_id, '_project_details_date', true ) ) ) . '</li>';
-    }
+            if ('' != $date) :
+                $html .= '<li class="date"><span class="header">Completed:</span> ' . date( 'F Y', strtotime( $date ) ) . '</li>';                        
+            endif;
 
-    if ( get_post_meta( $post_id, '_project_details_url', true ) ) {
-        $html .= '<li class="url"><span class="header">URL:</span> <a href="' . get_post_meta( $post_id, '_project_details_url', true ) . '" target="_blank">' . get_post_meta( $post_id, '_project_details_url', true ) . '</a></li>';
-    }
+            if ('' != $client) :
+                $html .= '<li class="url"><span class="header">URL:</span> <a href="' . $url . '" target="_blank">' . $url . '</a></li>';
+            endif;
 
         $html .= '</ul>';
 
+        $html .= emdotnet_get_project_taxonomies( $post_id, $taxonomies );
+
+    $html .= '</div>';
+
+    return $html;
+}
+
+/**
+ * Get project taxonomies.
+ * 
+ * @access public
+ * @param int $post_id (default: 0).
+ * @param string $taxonomies (default: array( 'skills', 'services' )).
+ * @param 'services' )
+ * @return bool/html
+ */
+function emdotnet_get_project_taxonomies( $post_id = 0, $taxonomies = array( 'skills', 'services' ) ) {
+    if ( ! $post_id ) {
+        return false;
+    }
+        
+    $html = '';
+    
     foreach ( $taxonomies as $tax ) :
         $tax_details = get_taxonomy( $tax );
         $terms = get_the_terms( $post_id, $tax );
@@ -680,10 +708,30 @@ function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills',
                 $html .= '</ul>';
             endif;
         endforeach;
+        
+    return $html;    
+}
 
-    $html .= '</div>';
+function emdotnet_get_portfolio_sidebar_field($post_id = 0, $meta_field = '', $acf_field = '') {
+    if ( ! $post_id )
+        return false;
+        
+    $field_value = '';
+    $use_acf = false;
+    
+    if (class_exists('ACF'))
+        $use_acf = true;
+        
+    $acf_value = get_field( $acf_field, $post_id );
+    $meta_value =  get_post_meta( $post_id, $meta_field, true );
+    
+    if ($use_acf && '' != $acf_value) :
+        $field_value = $acf_value;
+    else :
+        $field_value = $meta_value;
+    endif;
 
-    return $html;
+    return $field_value;   
 }
 
 /**
