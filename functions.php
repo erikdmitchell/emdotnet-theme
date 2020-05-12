@@ -666,7 +666,7 @@ function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills',
                 $html .= '<li class="date"><span class="header">Completed:</span> ' . date( 'F Y', strtotime( $date ) ) . '</li>';                        
             endif;
 
-            if ('' != $client) :
+            if ('' != $url) :
                 $html .= '<li class="url"><span class="header">URL:</span> <a href="' . $url . '" target="_blank">' . $url . '</a></li>';
             endif;
 
