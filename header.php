@@ -10,13 +10,12 @@
 
 <body <?php body_class(); ?>>
 
-    <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header clearfix">
         <div class="site-branding">
             <?php emdotnet_theme_navbar_brand(); ?>
         </div><!-- .site-branding -->
 
         <nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'emdotnet' ); ?></button>
             <?php
             wp_nav_menu(
                 array(
