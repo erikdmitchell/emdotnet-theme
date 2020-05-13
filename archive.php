@@ -47,7 +47,7 @@
                 <?php endwhile; ?>
 
                 <?php //emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
-                <?php emdotnet_theme_post_nav(); ?>
+                <?php //emdotnet_theme_post_nav(); ?>
 
             <?php else : ?>
                 <?php get_template_part( 'content', 'none' ); ?>
