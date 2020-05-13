@@ -10,14 +10,14 @@
  * @since emdotnet 1.0.0
  */
 ?>
+
 <?php get_header(); ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <?php if ( have_posts() ) : ?>
-                <header class="archive-header">
-                    <h1 class="archive-title">
+<div class="page-header">
+    <div class="em-container">
+        <div class="em-row">
+            <div class="em-col">
+                <h1 class="archive-title page-title">
                     <?php
                     if ( is_day() ) :
                         printf( __( 'Daily Archives: %s', 'emdotnet' ), get_the_date() );
@@ -29,27 +29,43 @@
                             _e( 'Archives', 'emdotnet' );
                         endif;
                         ?>
-                    </h1>
-                </header><!-- .archive-header -->
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="em-container">
+    <div class="em-row">
+        <div class="em-col">
                 <?php
+                if (have_posts()) :
                 while ( have_posts() ) :
                     the_post();
                     ?>
                     <?php get_template_part( 'content' ); ?>
                 <?php endwhile; ?>
 
-                <?php emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
+                <?php //emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
+                <?php emdotnet_theme_post_nav(); ?>
 
             <?php else : ?>
                 <?php get_template_part( 'content', 'none' ); ?>
             <?php endif; ?>
-
-        </div>
-        <div class="col-md-4">
-            <?php get_sidebar(); ?>
         </div>
     </div>
-</div><!-- .container -->
+</div>
 
-<?php get_footer(); ?>
+<?php
+get_footer();
+
+
+
+
+
+
+
+
+
+
+

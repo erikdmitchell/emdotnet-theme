@@ -56,3 +56,17 @@
         color: #777;
     }
 }
+
+/**
+ * archive.php
+ */
+.archive {
+    article {
+        a,
+        a:hover,
+        a:visited {
+            text-decoration: none;
+            color: #777;
+        }       
+    }
+}

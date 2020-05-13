@@ -810,3 +810,23 @@ function em_check_for_mdw( $post_id = 0 ) {
         echo '<strong>This project was done while working at Miller Designworks</strong>';
     }
 }
+
+/**
+ * Displays plugin tags for the post.
+ * 
+ * @access public
+ * @param string $before (default: '').
+ * @param string $sep (default: '').
+ * @param string $after (default: '').
+ * @return void
+ */
+function emdotnet_plugin_tags($before='',$sep='',$after='') { 
+    $html = '';
+      
+    // Get post by post ID.
+    if ( ! $post = get_post() ) {
+        return '';
+    }    
+
+    echo get_the_term_list( $post->ID, 'plugin-tags', $before, $sep, $after );
+}

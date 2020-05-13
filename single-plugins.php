@@ -23,7 +23,7 @@
             // Start the Loop.
             while ( have_posts() ) :
                 the_post();
-                get_template_part( 'content' );
+                get_template_part( 'content', 'plugins' );
 
                 // Previous/next post navigation.
                 emdotnet_theme_post_nav();
