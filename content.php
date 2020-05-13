@@ -57,5 +57,5 @@
     </div><!-- .entry-content -->
     <?php endif; ?>
 
-    <?php the_tags( '<div class="entry-meta">Tags: <span class="tag-links">', ', ', '</span></div>' ); ?>
+    <?php //the_tags( '<div class="entry-meta">Tags: <span class="tag-links">', ', ', '</span></div>' ); ?>
 </article><!-- #post-## -->
