@@ -2,25 +2,3 @@
     max-height: 300px;
     overflow: hidden;
 }
-
-/* about */
-.home-about {
-    padding: 0 30px;
-    background: #ccc;
-    
-    .page-content-function {
-        .content {
-            width: 100%;
-            padding-top: 15px;
-            padding-bottom: 30px;
-            
-            .title {
-                text-align: center;
-            }
-            
-            p {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
