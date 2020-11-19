@@ -1,9 +1,9 @@
         <footer>
-            <div class="em-container">
-                <div class="em-row footer-widgets">
-                    <div class="em-col-3 footer-widget footer-widget-1"><?php dynamic_sidebar( 'footer-1' ); ?></div>
-                    <div class="em-col-3 footer-widget footer-widget-2"><?php dynamic_sidebar( 'footer-2' ); ?></div>
-                    <div class="em-col-3 footer-widget footer-widget-3">
+            <div class="container">
+                <div class="row footer-widgets">
+                    <div class="col-3 footer-widget footer-widget-1"><?php dynamic_sidebar( 'footer-1' ); ?></div>
+                    <div class="col-3 footer-widget footer-widget-2"><?php dynamic_sidebar( 'footer-2' ); ?></div>
+                    <div class="col-3 footer-widget footer-widget-3">
                         <h3>Connect with Me</h3>
                         <ul class="social-media">
                             <li id="social-media-facebook"><a href="https://www.facebook.com/erikdmitchell"><i class="fab fa-facebook"></i></a></li>
