@@ -167,7 +167,8 @@ function emdotnet_theme_scripts() {
     $wp_scripts->add_data( 'respond-script', 'conditional', 'lt IE 9' );
 
     // enqueue font awesome and our main stylesheet.
-    wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), '5.13.0' );
+    wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '5.15.1' );
+    wp_enqueue_style( 'bootstrap-grid-style', get_template_directory_uri() . '/css/bootstrap-grid.min.css', '', '4.5.3' );
     wp_enqueue_style( 'emdotnet-theme-style', get_stylesheet_uri() );
 
     if ( is_front_page() ) {
