@@ -65,6 +65,7 @@ function emdotnet_theme_setup() {
     add_theme_support( 'menus' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'align-wide' );
 
     /**
      * add our image size(s)
@@ -153,7 +154,6 @@ function emdotnet_theme_scripts() {
 
     // enqueue font awesome and our main stylesheet.
     wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '5.15.1' );
-    wp_enqueue_style( 'bootstrap-grid-style', get_template_directory_uri() . '/css/bootstrap-grid.min.css', '', '4.5.3' );
     wp_enqueue_style( 'emdotnet-theme-style', get_stylesheet_uri() );
 
 /*

@@ -10,7 +10,8 @@
     </div>
 
     <div class="home-about">
-        <div class="container">
+        
+            
             <?php
             if ( have_posts() ) :
                 while ( have_posts() ) :
@@ -20,8 +21,8 @@
                     <?php
             endwhile;
 endif;
-            ?>
-        </div>
+            ?>           
+
     </div>
 
 <?php

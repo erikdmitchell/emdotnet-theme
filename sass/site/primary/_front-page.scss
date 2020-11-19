@@ -2,3 +2,51 @@
     max-height: 300px;
     overflow: hidden;
 }
+
+.large-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+    .wp-block-column {
+        
+    }
+    
+    .wp-block-quote {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+    .wp-block-image {
+        
+        img {
+            
+        }
+        
+    }
+}
+
+.main-web-dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #ccc;
+    
+    .icon-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        i {
+            flex: 1 0 25%;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+    }   
+}
