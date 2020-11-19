@@ -75,11 +75,6 @@ function emdotnet_theme_setup() {
     add_image_size( 'project-single-thumb', 1140, 655, true );
 
     /**
-     * include admin stuff
-     */
-    include_once( get_template_directory() . '/inc/admin/init.php' );
-
-    /**
      * include theme meta page
      * allows users to hook and filter into the default meta tags in the header
      */
