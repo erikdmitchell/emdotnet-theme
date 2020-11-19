@@ -70,9 +70,6 @@ function emdotnet_theme_setup() {
      * add our image size(s)
      */
     add_image_size( 'navbar-logo', 163, 100, true );
-    add_image_size( 'slide-image', 1200, 500, true );
-    add_image_size( 'project-home-thumb', 555, 555, true );
-    add_image_size( 'project-single-thumb', 1140, 655, true );
 
     /**
      * include theme meta page
@@ -90,7 +87,7 @@ function emdotnet_theme_setup() {
     /**
      * This theme styles the visual editor to resemble the theme style
      */
-    add_editor_style( 'inc/css/editor-style.css' );
+    add_editor_style( 'css/editor-style.css' );
 
 }
 add_action( 'after_setup_theme', 'emdotnet_theme_setup' );
@@ -101,18 +98,6 @@ add_action( 'after_setup_theme', 'emdotnet_theme_setup' );
  * @since emdotnet 1.0.0
  */
 function emdotnet_theme_widgets_init() {
-
-    register_sidebar(
-        array(
-            'name' => 'Sidebar',
-            'id' => 'sidebar',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
-        )
-    );
-
     register_sidebar(
         array(
             'name' => 'Footer 1',
@@ -146,8 +131,8 @@ function emdotnet_theme_scripts() {
     global $wp_scripts;
 
     // enqueue our scripts for slider and theme
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
+    //wp_enqueue_script( 'jquery' );
+    //wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
     wp_enqueue_script( 'emdotnet-theme-script', get_template_directory_uri() . '/js/emdotnet-theme.min.js', array( 'jquery' ), '1.2.0', true );
 
     if ( is_singular() ) :
@@ -171,9 +156,11 @@ function emdotnet_theme_scripts() {
     wp_enqueue_style( 'bootstrap-grid-style', get_template_directory_uri() . '/css/bootstrap-grid.min.css', '', '4.5.3' );
     wp_enqueue_style( 'emdotnet-theme-style', get_stylesheet_uri() );
 
+/*
     if ( is_front_page() ) {
         wp_enqueue_script( 'emdotnet-front-page-script', get_stylesheet_directory_uri() . '/js/front-page.min.js' );
     }
+*/
 }
 add_action( 'wp_enqueue_scripts', 'emdotnet_theme_scripts' );
 
@@ -412,50 +399,6 @@ function emdotnet_wp_parse_args( &$a, $b ) {
     return $result;
 }
 
-/***** PORTFOLIO *****/
-
-/**
- * edm_customfilter_grid_classes function.
- *
- * @access public
- * @param mixed $classes
- * @return void
- */
-function edm_customfilter_grid_classes( $classes ) {
-    $classes .= 'edm-portfolio-grid';
-
-    return $classes;
-}
-add_filter( 'customfilter_grid_classes', 'edm_customfilter_grid_classes' );
-
-/**
- * filter_item_output function.
- *
- * @access public
- * @param mixed $default_output
- * @param mixed $post
- * @return void
- */
-function filter_item_output( $default_output, $post ) {
-    $html = null;
-
-    if ( has_post_thumbnail( $post->ID ) ) :
-        $thumb = '<a href="' . get_permalink( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, 'project-home-thumb' ) . '</a>';
-    else :
-        $thumb = '<a href="' . get_permalink( $post->ID ) . '"><img src="http://placehold.it/350x150" class="img-responsive"></a>';
-    endif;
-
-    $html .= '<div class="project" id="post-' . $post->ID . '">';
-        $html .= $thumb;
-        $html .= '<a href="' . get_permalink( $post->ID ) . '"><h3>' . get_the_title( $post->ID ) . '</h3></a>';
-        $html .= get_post_excerpt_by_id( $post->ID, 45, '', '...' );
-        $html .= '<p><a href="' . get_permalink() . '" class="btn btn-primary">Read More</a></p>';
-    $html .= '</div>';
-
-    return $html;
-}
-add_filter( 'customfilter_item_output', 'filter_item_output', 10, 2 );
-
 /**
  * get_terms_list function.
  *
@@ -497,97 +440,6 @@ function get_terms_list( $term = false ) {
 }
 
 /**
- * get_home_projects function.
- *
- * @access public
- * @param string $post_type (default: 'portfolio')
- * @param int    $limit (default: 6)
- * @return void
- */
-function get_home_projects( $post_type = 'portfolio', $limit = 6 ) {
-    $html = null;
-    $args = array(
-        'posts_per_page' => $limit,
-        'orderby' => 'rand',
-        'post_type' => $post_type,
-    );
-    $posts = get_posts( $args );
-
-    if ( ! count( $posts ) ) {
-        return false;
-    }
-
-    foreach ( $posts as $post ) :
-        if ( has_post_thumbnail( $post->ID ) ) :
-            $thumb = '<a href="' . get_permalink( $post->ID ) . '">' . get_the_post_thumbnail( $post->ID, 'project-home-thumb' ) . '</a>';
-        else :
-            $thumb = '<a href="' . get_permalink( $post->ID ) . '"><img src="http://placehold.it/555x555" class="img-responsive"></a>';
-        endif;
-
-        $html .= '<div class="em-col-3 project" id="post-' . $post->ID . '">';
-            $html .= $thumb;
-            $html .= '<a href="' . get_permalink( $post->ID ) . '"><div class="title"><h3>' . get_the_title( $post->ID ) . '</h3></div></a>';
-        $html .= '</div>';
-    endforeach;
-
-    return $html;
-}
-
-/**
- * get_page_content function.
- *
- * @access public
- * @param bool $post_id (default: false)
- * @param bool $title (default: false)
- * @return void
- */
-function get_page_content( $post_id = false, $title = false ) {
-    if ( ! $post_id ) {
-        return false;
-    }
-
-    $html = null;
-    $post = get_post( $post_id );
-    $thumb = '<i class="fa fa-user"></i>';
-
-    if ( ! $title ) {
-        $title = get_the_title( $post->ID );
-    }
-
-    $html .= '<div class="page-content-function">';
-        $html .= '<div class="content">';
-            $html .= '<h2 class="title">' . $title . '</h2>';
-            $html .= apply_filters( 'the_content', $post->post_content );
-        $html .= '</div>';
-    $html .= '</div>';
-
-    return $html;
-}
-
-/**
- * shortcode_page_content function.
- *
- * @access public
- * @param mixed $atts
- * @return void
- */
-function shortcode_page_content( $atts ) {
-    $atts = extract(
-        shortcode_atts(
-            array(
-                'id' => false,
-                'title' => false,
-            ),
-            $atts,
-            'page-content'
-        )
-    );
-
-    return get_page_content( $id, $title );
-}
-add_shortcode( 'page-content', 'shortcode_page_content' );
-
-/**
  * Gets the excerpt of a specific post ID or object
  *
  * @param - $post - object/int - the ID or object of the post to get the excerpt of
@@ -620,204 +472,4 @@ function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>',
     return apply_filters( 'the_content', $the_excerpt );
 }
 
-/**
- * Get portfolio sidebar.
- * 
- * @access public
- * @param bool $post_id (default: false).
- * @param string $taxonomies (default: array( 'skills', 'services' )).
- * @param 'services' )
- * @return bool/html
- */
-function get_portfolio_sidebar( $post_id = false, $taxonomies = array( 'skills', 'services' ) ) {
-    if ( ! $post_id )
-        return false;
-    
-    $html = '';
-    $client = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_client', 'client');
-    $date = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_date', 'date');
-    $url = emdotnet_get_portfolio_sidebar_field( $post_id, '_project_details_url', 'url');
 
-    $html .= '<div class="project-details">';
-        $html .= '<h3 class="project-details-title">Project Details</h3>';
-        $html .= '<ul class="project-details-list">';
-        
-            if ('' != $client) :
-                $html .= '<li class="client"><span class="header">Client:</span> ';
-                    $html .= $client;
-                $html .= '</li>';        
-            endif;
-
-            if ('' != $date) :
-                $html .= '<li class="date"><span class="header">Completed:</span> ' . date( 'F Y', strtotime( $date ) ) . '</li>';                        
-            endif;
-
-            if ('' != $url) :
-                $html .= '<li class="url"><span class="header">URL:</span> <a href="' . $url . '" target="_blank">' . $url . '</a></li>';
-            endif;
-
-        $html .= '</ul>';
-
-        $html .= emdotnet_get_project_taxonomies( $post_id, $taxonomies );
-
-    $html .= '</div>';
-
-    return $html;
-}
-
-/**
- * Get project taxonomies.
- * 
- * @access public
- * @param int $post_id (default: 0).
- * @param string $taxonomies (default: array( 'skills', 'services' )).
- * @param 'services' )
- * @return bool/html
- */
-function emdotnet_get_project_taxonomies( $post_id = 0, $taxonomies = array( 'skills', 'services' ) ) {
-    if ( ! $post_id ) {
-        return false;
-    }
-        
-    $html = '';
-    
-    foreach ( $taxonomies as $tax ) :
-        $tax_details = get_taxonomy( $tax );
-        $terms = get_the_terms( $post_id, $tax );
-
-        if ( is_array( $terms ) ) :
-            $html .= '<h4>' . $tax_details->labels->name . '</h4>';
-            $html .= '<ul class="' . $tax . '">';
-            foreach ( $terms as $term ) :
-                $html .= '<li><a href="/projects#' . $term->slug . '">' . $term->name . '</a></li>';
-                endforeach;
-                $html .= '</ul>';
-            endif;
-        endforeach;
-        
-    return $html;    
-}
-
-function emdotnet_get_portfolio_sidebar_field($post_id = 0, $meta_field = '', $acf_field = '') {
-    if ( ! $post_id )
-        return false;
-        
-    $field_value = '';
-    $use_acf = false;
-    
-    if (class_exists('ACF'))
-        $use_acf = true;
-        
-    $acf_value = get_field( $acf_field, $post_id );
-    $meta_value =  get_post_meta( $post_id, $meta_field, true );
-    
-    if ($use_acf && '' != $acf_value) :
-        $field_value = $acf_value;
-    else :
-        $field_value = $meta_value;
-    endif;
-
-    return $field_value;   
-}
-
-/**
- * get_social_media function.
- *
- * @access public
- * @param string $title (default: 'Social Media')
- * @return void
- */
-function get_social_media( $title = 'Social Media' ) {
-    $html = null;
-    $sm_options = get_option( 'social_media_options' );
-
-    $html .= '<h3>' . $title . '</h3>';
-    $html .= '<ul class="social-media">';
-    foreach ( $sm_options as $sm_id => $sm ) :
-        $html .= '<li id="sm-' . $sm_id . '">';
-            $html .= '<a href="' . $sm['url'] . '"><i class="fa ' . $sm['icon'] . '"></i></a>';
-        $html .= '</li>';
-        endforeach;
-    $html .= '</ul>';
-
-    return $html;
-}
-
-/**
- * em_get_plugins function.
- *
- * @access public
- * @param array $args (default: array())
- * @return void
- */
-function em_get_plugins( $args = array() ) {
-    $html = null;
-    $default_args = array(
-        'posts_per_page' => -1,
-        'post_type' => 'plugins',
-    );
-    $args = array_merge( $default_args, $args );
-    $posts = get_posts( $args );
-
-    if ( ! count( $posts ) ) {
-        return false;
-    }
-
-    foreach ( $posts as $post ) :
-        $html .= '<article id="plugin-' . $post->ID . '" class="plugin">';
-            $html .= '<h3>' . get_the_title( $post->ID ) . '</h3>';
-            $html .= get_the_post_thumbnail( $post->ID, 'thumbnail' );
-            $html .= '<div class="description">';
-                $html .= apply_filters( 'the_content', $post->post_content );
-            $html .= '</div>';
-        $html .= '</article><!-- .plugin -->';
-    endforeach;
-
-    return $html;
-}
-
-/**
- * display_plugins function.
- *
- * @access public
- * @param array $args (default: array())
- * @return void
- */
-function display_plugins( $args = array() ) {
-    echo em_get_plugins( $args );
-}
-
-/**
- * em_check_for_mdw function.
- *
- * @access public
- * @param int $post_id (default: 0)
- * @return void
- */
-function em_check_for_mdw( $post_id = 0 ) {
-    $post_tags = wp_get_post_tags( $post_id, array( 'fields' => 'slugs' ) );
-
-    if ( in_array( 'mdw', $post_tags ) ) {
-        echo '<strong>This project was done while working at Miller Designworks</strong>';
-    }
-}
-
-/**
- * Displays plugin tags for the post.
- * 
- * @access public
- * @param string $before (default: '').
- * @param string $sep (default: '').
- * @param string $after (default: '').
- * @return void
- */
-function emdotnet_plugin_tags($before='',$sep='',$after='') { 
-    $html = '';
-      
-    // Get post by post ID.
-    if ( ! $post = get_post() ) {
-        return '';
-    }    
-
-    echo get_the_term_list( $post->ID, 'plugin-tags', $before, $sep, $after );
-}
