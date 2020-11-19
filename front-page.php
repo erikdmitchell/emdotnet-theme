@@ -31,12 +31,6 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row home-feature-projects">
-            <?php echo get_home_projects( 'projects' ); ?>
-        </div>
-    </div>
-
     <div class="home-about">
         <div class="container">
             <?php
