@@ -85,11 +85,6 @@ function emdotnet_theme_setup() {
      */
     include_once( get_template_directory() . '/inc/theme-meta.php' );
 
-    /**
-     * include theme options
-     */
-    include_once( get_template_directory() . '/theme-options.php' );
-
     // register our navigation area
     register_nav_menus(
         array(
