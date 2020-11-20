@@ -132,8 +132,8 @@ function emdotnet_theme_scripts() {
     global $wp_scripts;
 
     // enqueue our scripts for slider and theme
-    //wp_enqueue_script( 'jquery' );
-    //wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
+    // wp_enqueue_script( 'jquery' );
+    // wp_enqueue_script( 'jquery-actual-script', get_template_directory_uri() . '/inc/js/jquery.actual.min.js', array( 'jquery' ), '1.0.16', true );
     wp_enqueue_script( 'emdotnet-theme-script', get_template_directory_uri() . '/js/emdotnet-theme.min.js', array( 'jquery' ), '1.2.0', true );
 
     if ( is_singular() ) :
@@ -156,11 +156,11 @@ function emdotnet_theme_scripts() {
     wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '5.15.1' );
     wp_enqueue_style( 'emdotnet-theme-style', get_stylesheet_uri() );
 
-/*
+    /*
     if ( is_front_page() ) {
         wp_enqueue_script( 'emdotnet-front-page-script', get_stylesheet_directory_uri() . '/js/front-page.min.js' );
     }
-*/
+    */
 }
 add_action( 'wp_enqueue_scripts', 'emdotnet_theme_scripts' );
 
@@ -472,4 +472,54 @@ function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>',
     return apply_filters( 'the_content', $the_excerpt );
 }
 
+function emdotnet_has_categories( $excl = '' ) {
+    global $post;
 
+    $categories = get_the_category( $post->ID );
+
+    if ( ! empty( $categories ) ) :
+        $exclude = $excl;
+        $exclude = explode( ',', $exclude );
+
+        foreach ( $categories as $key => $cat ) :
+            if ( in_array( $cat->cat_ID, $exclude ) ) :
+                unset( $categories[ $key ] );
+            endif;
+        endforeach;
+
+        if ( count( $categories ) >= 1 ) :
+            return true;
+        endif;
+    endif;
+
+    return false;
+}
+
+function emdotnet_post_categories( $spacer = ' ', $excl = '' ) {
+    global $post;
+
+    $categories = get_the_category( $post->ID );
+
+    if ( ! empty( $categories ) ) :
+        $exclude = $excl;
+        $exclude = explode( ',', $exclude );
+        $thecount = count( get_the_category() ) - count( $exclude );
+
+        foreach ( $categories as $cat ) :
+            $html = '';
+
+            if ( ! in_array( $cat->cat_ID, $exclude ) ) {
+                $html .= '<a href="' . get_category_link( $cat->cat_ID ) . '" ';
+                $html .= 'title="' . $cat->cat_name . '">' . $cat->cat_name . '</a>';
+
+                if ( $thecount > 0 ) {
+                    $html .= $spacer;
+                }
+
+                $thecount--;
+
+                echo $html;
+            }
+        endforeach;
+    endif;
+}

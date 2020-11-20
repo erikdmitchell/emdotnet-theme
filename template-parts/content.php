@@ -28,11 +28,11 @@
 
             if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
                 ?>
-                    <span class="comments-link"><span class="glyphicon glyphicon-comment"></span><?php comments_popup_link( __( 'Leave a comment', 'emdotnet' ), __( '1 Comment', 'emdotnet' ), __( '% Comments', 'emdotnet' ) ); ?></span>
+                    <span class="comments-link"></span><?php comments_popup_link( __( 'Leave a comment', 'emdotnet' ), __( '1 Comment', 'emdotnet' ), __( '% Comments', 'emdotnet' ) ); ?></span>
                 <?php
                 endif;
 
-                edit_post_link( __( 'Edit', 'emdotnet' ), '<span class="edit-link"><span class="glyphicon glyphicon-pencil"></span>', '</span>' );
+                edit_post_link( __( 'Edit', 'emdotnet' ), '<span class="edit-link">', '</span>' );
             ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
@@ -57,5 +57,23 @@
     </div><!-- .entry-content -->
     <?php endif; ?>
 
-    <?php //the_tags( '<div class="entry-meta">Tags: <span class="tag-links">', ', ', '</span></div>' ); ?>
+    <div class="entry-meta">
+        <?php if ( has_tag() ) : ?>
+            <div class="tags-list">
+                <div class="tags-title">Tags</div>
+                
+                <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
+            </div>
+        <?php endif; ?>
+        <?php if ( emdotnet_has_categories() ) : ?>
+            <div class="categories-list">
+                <div class="categories-title">Categories</div>
+            
+                <div class="categories-link">
+                    <?php emdotnet_post_categories( ' ', 1 ); ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+                        
 </article><!-- #post-## -->
