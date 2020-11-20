@@ -13,7 +13,21 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	padding-left: 15px;
+	padding-right: 15px;
+    
+	margin: 0 1rem;
+	max-width: calc(100% - 2rem);
+	
+	@media only screen and (min-width: 768px) {
+		margin: 0 10%;
+		max-width: 80%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
 	
     a,
     a:hover,
