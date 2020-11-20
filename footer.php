@@ -1,6 +1,6 @@
         <footer>
-            <div class="container">
-                <div class="row footer-widgets">
+            <div class="footer-content">
+                <div class="footer-widgets">
                     <div class="col-3 footer-widget footer-widget-1"><?php dynamic_sidebar( 'footer-1' ); ?></div>
                     <div class="col-3 footer-widget footer-widget-2"><?php dynamic_sidebar( 'footer-2' ); ?></div>
                     <div class="col-3 footer-widget footer-widget-3">
