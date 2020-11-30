@@ -53,14 +53,23 @@
 .page-header,
 .entry-header,
 .archive-header {
-    background: #ccc;
-    border: 0 solid #ccc;
-    border-left: 0;
-    border-right: 0;
-    text-transform: uppercase;
-    margin-top: 0;
     color: #000;
-    margin-bottom: 30px;
+
+	padding-left: 15px;
+	padding-right: 15px;
+    
+	margin: 0 1rem;
+	max-width: calc(100% - 2rem);
+	
+	@media only screen and (min-width: 768px) {
+		margin: 0 10%;
+		max-width: 80%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
     
     a,
     a:hover,
@@ -69,6 +78,37 @@
         color: #000;
     }
 }
+
+.page-header .entry-header {
+    color: #000;
+
+	padding-left: 0;
+	padding-right: 0;
+    
+	margin: 0;
+	//max-width: calc(100% - 2rem);
+	max-width: 100%;
+	
+	@media only screen and (min-width: 768px) {
+		//margin: 0 10%;
+		//max-width: 80%;
+		margin: 0;
+		max-width: 100%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0;
+		max-width: 100%;
+	}
+    
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
 
 .entry-meta {
     color: #000;
