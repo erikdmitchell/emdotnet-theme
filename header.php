@@ -25,6 +25,7 @@
             );
             ?>
         </nav><!-- #site-navigation -->
+        <a class="toggle-nav" href="#"><i class="fas fa-bars"></i></a>
     </header><!-- #masthead -->
     
     

@@ -3,6 +3,17 @@
  */
 
 /**
+ * toggles the mobile nav
+ */ 
+jQuery(document).ready(function() {
+    jQuery('.toggle-nav').click(function(e) {      
+        jQuery('.main-navigation ul').slideToggle(500);
+
+        e.preventDefault();
+    });
+});
+
+/**
  * back to top button function
  */
 jQuery(document).ready(function($){
