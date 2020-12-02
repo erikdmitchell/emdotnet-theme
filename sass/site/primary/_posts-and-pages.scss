@@ -106,9 +106,19 @@
     }
 }
 
+.entry-header .entry-meta {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;    
+}
 
 .entry-meta {
     color: #000;
+    
+    .entry-date,
+    .author {
+        margin-right: 5px;
+    }
     
     a,
     a:hover,

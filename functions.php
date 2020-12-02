@@ -212,14 +212,15 @@ function emdotnet_theme_post_thumbnail( $size = 'full' ) {
  */
 function emdotnet_theme_posted_on() {
     if ( is_sticky() && is_home() && ! is_paged() ) {
-        echo '<span class="featured-post"><span class="glyphicon glyphicon-pushpin"></span>' . __( 'Sticky', 'emdotnet' ) . '</span>';
+        echo '<span class="featured-post">' . __( 'Sticky', 'emdotnet' ) . '</span>';
     }
 
     // Set up and print post meta information. -- hide date if sticky
     if ( ! is_sticky() ) :
-        echo '<span class="entry-date"><span class="glyphicon glyphicon-time"></span><a href="' . get_permalink() . '" rel="bookmark"><time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date() . '</time></a></span>';
+        echo '<span class="entry-date"><a href="' . get_permalink() . '" rel="bookmark"><time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date() . '</time></a></span>';
     endif;
-    echo '<span class="byline"><span class="glyphicon glyphicon-user"></span><span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
+    
+    //echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
 }
 
 /**
