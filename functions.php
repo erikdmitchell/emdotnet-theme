@@ -476,6 +476,10 @@ function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>',
     return apply_filters( 'the_content', $the_excerpt );
 }
 
+function emdotnet_excerpt( $post, $length = 10, $tags = '<a><em><strong>', $extra = ' . . .' ) {
+    echo get_post_excerpt_by_id( $post, $length, $tags, $extra);    
+}
+
 function emdotnet_has_categories( $excl = '' ) {
     global $post;
 
