@@ -1,0 +1,160 @@
+.sticky {
+	display: block;
+}
+
+.post {
+	margin: 0 0 1.5em;
+	
+	.post-thumbnail {
+    	text-align: center;
+        max-height: 480px;
+        overflow: hidden;
+	}
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary,
+.entry-meta,
+.footer-content {
+	padding-left: 15px;
+	padding-right: 15px;
+    
+	margin: 0 1rem;
+	max-width: calc(100% - 2rem);
+	
+	@media only screen and (min-width: 768px) {
+		margin: 0 10%;
+		max-width: 80%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #777;
+    }	
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin-bottom: 30px;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.page-header,
+.entry-header,
+.archive-header {
+    color: #000;
+
+	padding-left: 15px;
+	padding-right: 15px;
+    
+	margin: 0 1rem;
+	max-width: calc(100% - 2rem);
+	
+	@media only screen and (min-width: 768px) {
+		margin: 0 10%;
+		max-width: 80%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+    
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.post .entry-header .entry-meta {
+    margin-bottom: 10px;
+}
+
+.page-header .entry-header {
+    color: #000;
+
+	padding-left: 0;
+	padding-right: 0;
+    
+	margin: 0;
+	max-width: 100%;
+	
+	@media only screen and (min-width: 768px) {
+		margin: 0;
+		max-width: 100%;
+	}
+	
+	@media only screen and (min-width: 1500px) {
+		margin: 0;
+		max-width: 100%;
+	}
+    
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.entry-header .entry-meta {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;    
+}
+
+.entry-meta {
+    color: #000;
+    
+    .entry-date,
+    .author {
+        margin-right: 5px;
+    }
+    
+    a,
+    a:hover,
+    a:visited {
+        text-decoration: none;
+        color: #777;
+    }
+}
+
+.wp-block-columns {
+    &.flexcol {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/**
+ * archive.php
+ */
+.archive {
+    article {
+        a,
+        a:hover,
+        a:visited {
+            text-decoration: none;
+            color: #777;
+        }       
+    }
+}
