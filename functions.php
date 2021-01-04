@@ -73,6 +73,7 @@ function emdotnet_theme_setup() {
      * add our image size(s)
      */
     add_image_size( 'navbar-logo', 163, 100, true );
+    add_image_size( 'home-blog-feature-image', 360, 200, true );
 
     /**
      * include theme meta page
@@ -526,3 +527,13 @@ function emdotnet_post_categories( $spacer = ' ', $excl = '' ) {
         endforeach;
     endif;
 }
+
+function emdotnet_block_editor_settings( $editor_settings ) {
+    $editor_settings['imageSizes'][] = [
+        'slug' => 'home-blog-feature-image',
+        'name' => 'Homepage Blog',
+    ];
+
+    return $editor_settings;
+}
+add_filter( 'block_editor_settings', 'emdotnet_block_editor_settings' );
