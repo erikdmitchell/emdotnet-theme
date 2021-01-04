@@ -6,7 +6,7 @@
         <div class="entry-meta">
             <?php
             emdotnet_theme_posted_on();
-            
+
             edit_post_link( __( 'Edit', 'emdotnet' ), '<span class="edit-link">', '</span>' );
             ?>
         </div><!-- .entry-meta -->
@@ -14,7 +14,7 @@
 
     <div class="entry-content">
         <?php
-            $link = '...<a href="'.get_permalink( get_the_ID() ).'">read more</a>';
+            $link = '...<a href="' . get_permalink( get_the_ID() ) . '">read more</a>';
             emdotnet_excerpt( get_the_ID(), 25, '<a><em><strong>', $link );
             wp_link_pages(
                 array(
@@ -24,7 +24,7 @@
                     'link_after'  => '</span>',
                 )
             );
-        ?>
+            ?>
     </div><!-- .entry-content -->
 
     <div class="entry-meta">
@@ -35,7 +35,7 @@
                 <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
             </div>
         <?php endif; ?>
-        <?php if ( emdotnet_has_categories('Uncategorized') ) : ?>
+        <?php if ( emdotnet_has_categories( 'Uncategorized' ) ) : ?>
             <div class="categories-list">
                 <div class="categories-title">Categories</div>
             

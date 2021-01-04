@@ -31,7 +31,7 @@
                     'link_after'  => '</span>',
                 )
             );
-        ?>
+            ?>
     </div><!-- .entry-content -->
 
     <div class="entry-meta">
@@ -42,7 +42,7 @@
                 <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
             </div>
         <?php endif; ?>
-        <?php if ( emdotnet_has_categories('Uncategorized') ) : ?>
+        <?php if ( emdotnet_has_categories( 'Uncategorized' ) ) : ?>
             <div class="categories-list">
                 <div class="categories-title">Categories</div>
             

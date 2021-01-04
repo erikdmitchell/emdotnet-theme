@@ -17,7 +17,7 @@
                 while ( have_posts() ) :
                     the_post();
                     ?>
-                    <?php the_content('template-parts/content', 'front-page'); ?>
+                    <?php the_content( 'template-parts/content', 'front-page' ); ?>
                     <?php
             endwhile;
 endif;

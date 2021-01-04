@@ -66,17 +66,16 @@ function emdotnet_theme_setup() {
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'align-wide' ); // Gutenberg
-	add_theme_support( 'editor-styles' ); // adds gutenberg style sheet to admin
-     
+    add_theme_support( 'editor-styles' ); // adds gutenberg style sheet to admin
 
     /**
      * add our image size(s)
      */
     add_image_size( 'navbar-logo', 163, 100, true );
     add_image_size( 'home-blog-feature-image', 360, 200, true );
-    
+
     add_image_size( 'blog-single', 9999, 480, true );
-    //add_image_size( 'blog-single', 550, 240, true );   
+    // add_image_size( 'blog-single', 550, 240, true );
 
     /**
      * include theme meta page
@@ -225,8 +224,8 @@ function emdotnet_theme_posted_on() {
     if ( ! is_sticky() ) :
         echo '<span class="entry-date"><a href="' . get_permalink() . '" rel="bookmark"><time class="entry-date" datetime="' . get_the_date( 'c' ) . '">' . get_the_date() . '</time></a></span>';
     endif;
-    
-    //echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
+
+    // echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" rel="author">' . get_the_author() . '</a></span></span>';
 }
 
 /**
@@ -480,7 +479,7 @@ function get_post_excerpt_by_id( $post, $length = 10, $tags = '<a><em><strong>',
 }
 
 function emdotnet_excerpt( $post, $length = 10, $tags = '<a><em><strong>', $extra = ' . . .' ) {
-    echo get_post_excerpt_by_id( $post, $length, $tags, $extra);    
+    echo get_post_excerpt_by_id( $post, $length, $tags, $extra );
 }
 
 function emdotnet_has_categories( $excl = '' ) {
@@ -536,10 +535,10 @@ function emdotnet_post_categories( $spacer = ' ', $excl = '' ) {
 }
 
 function emdotnet_block_editor_settings( $editor_settings ) {
-    $editor_settings['imageSizes'][] = [
+    $editor_settings['imageSizes'][] = array(
         'slug' => 'home-blog-feature-image',
         'name' => 'Homepage Blog',
-    ];
+    );
 
     return $editor_settings;
 }
