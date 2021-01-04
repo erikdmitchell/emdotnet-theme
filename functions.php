@@ -74,6 +74,9 @@ function emdotnet_theme_setup() {
      */
     add_image_size( 'navbar-logo', 163, 100, true );
     add_image_size( 'home-blog-feature-image', 360, 200, true );
+    
+    add_image_size( 'blog-single', 9999, 480, true );
+    //add_image_size( 'blog-single', 550, 240, true );   
 
     /**
      * include theme meta page

@@ -4,6 +4,12 @@
 
 .post {
 	margin: 0 0 1.5em;
+	
+	.post-thumbnail {
+    	text-align: center;
+        max-height: 480px;
+        overflow: hidden;
+	}
 }
 
 .updated:not(.published) {
