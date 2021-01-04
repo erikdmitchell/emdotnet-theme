@@ -486,7 +486,7 @@ function emdotnet_has_categories( $excl = '' ) {
         $exclude = explode( ',', $exclude );
 
         foreach ( $categories as $key => $cat ) :
-            if ( in_array( $cat->cat_ID, $exclude ) ) :
+            if ( in_array( $cat->name, $exclude ) ) :
                 unset( $categories[ $key ] );
             endif;
         endforeach;
