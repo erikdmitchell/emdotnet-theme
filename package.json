@@ -1,22 +1,22 @@
 {
-  "name": "gulp-standards",
-  "version": "0.3.0",
-  "description": "Gulp Standards.",
+  "name": "emdotnet-theme",
+  "version": "1.0.0",
+  "description": "EMdotNet theme.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Gulp Standards\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erikdmitchell/gulp-standards.git"
+    "url": "git+https://github.com/erikdmitchell/emdotnet-theme.git"
   },
   "keywords": [],
   "author": "Erik Mitchell",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/erikdmitchell/gulp-standards/issues"
+    "url": "https://github.com/erikdmitchell/emdotnet-theme/issues"
   },
-  "homepage": "https://github.com/erikdmitchell/gulp-standards#readme",
+  "homepage": "https://github.com/erikdmitchell/emdotnet-theme#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
