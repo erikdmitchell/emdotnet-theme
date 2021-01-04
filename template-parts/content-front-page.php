@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying content on the front page
+ *
+ * @package WordPress
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
+ */
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php

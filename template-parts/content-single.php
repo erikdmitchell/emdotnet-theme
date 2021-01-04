@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying blog post content
+ *
+ * @package WordPress
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
+ */
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php emdotnet_theme_post_thumbnail( 'blog-single' ); ?>
     <header class="entry-header">

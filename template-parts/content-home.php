@@ -1,3 +1,14 @@
+<?php
+/**
+ * The default template for displaying content on our blog page
+ *
+ * @package WordPress
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
+ */
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php emdotnet_theme_post_thumbnail( 'home-blog-feature-image' ); ?>
     <header class="entry-header">

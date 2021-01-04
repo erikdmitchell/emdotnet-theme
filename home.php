@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying the blog page
+ *
+ * @package WordPress
+ * @subpackage emdotnet
+ * @since emdotnet 1.0.0
+ */
+
+?>
+
 <?php get_header(); ?>
     <div class="blog-posts">
         <?php
