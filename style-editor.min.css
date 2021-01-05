@@ -10,7 +10,7 @@
 @media only screen and (min-width:768px){.main-cycling,.main-blog-posts{margin:0 10%;max-width:80%}
 }@media only screen and (min-width:1500px){.main-cycling,.main-blog-posts{margin:0 auto;max-width:1200px}
 }.main-cycling a,.main-cycling a:hover,.main-cycling a:visited,.main-blog-posts a,.main-blog-posts a:hover,.main-blog-posts a:visited{text-decoration:none}
-.main-cycling{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.main-blog-posts{display:-webkit-box;display:-ms-flexbox;display:flex;padding-bottom:30px}
+.main-cycling{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.main-blog-posts{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-bottom:30px}
 @media only screen and (max-width:991px){.main-blog-posts{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
-}.main-blog-posts li{-webkit-box-flex:1;-ms-flex:1;flex:1;padding:15px 15px 0 15px}
+}.main-blog-posts li{-webkit-box-flex:1;-ms-flex:1 1 33.333333%;flex:1 1 33.333333%;padding:15px 15px 0 15px;max-width:33.333333%}
 .main-blog-posts li:nth-child(odd){background:#f1f1f1}.main-blog-posts li a,.main-blog-posts li a:hover,.main-blog-posts li a:visited{font-size:2rem;color:#000}
