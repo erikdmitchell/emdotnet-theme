@@ -21,12 +21,14 @@
             <?php endif; ?>
         </header><!-- .archive-header -->
 
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            ?>
-            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-        <?php endwhile; ?>
+        <div class="tag-posts-list">
+            <?php
+            while ( have_posts() ) :
+                the_post();
+                ?>
+                <?php get_template_part( 'template-parts/content', 'tag' ); ?>
+            <?php endwhile; ?>
+        </div>
 
         <?php emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
 

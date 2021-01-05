@@ -3,7 +3,7 @@ Contributors: Erik Mitchell
 Tags: white, light, responsive-layout, featured-images, custom-menu, theme-options, translation-ready
 Requires at least: 3.5
 Tested up to: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,10 @@ Coming soon...
 Coming soon...
 
 == Changelog ==
+
+= 1.0.1 =
+
+ * Fixed screenshot, blog posts layout, category layout and tag layout.
 
 = 1.0.0 =
 

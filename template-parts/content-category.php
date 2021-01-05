@@ -1,10 +1,10 @@
 <?php
 /**
- * The default template for displaying content on our blog page
+ * The template for displaying blog category posts
  *
  * @package WordPress
  * @subpackage emdotnet
- * @since emdotnet 1.0.0
+ * @since emdotnet 1.0.1
  */
 
 ?>
