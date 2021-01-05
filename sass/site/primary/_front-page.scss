@@ -98,7 +98,7 @@
 
 .main-blog-posts {
     display: flex;
-    //flex-wrap: wrap;
+    flex-wrap: wrap;
     padding-bottom: 30px;
 
 	@media only screen and (max-width: 991px) {
@@ -106,9 +106,9 @@
 	}    
    
     li {
-        //flex: 1 0 33.333333%;
-        flex: 1;
+        flex: 1 1 33.333333%;
         padding: 15px 15px 0 15px;
+        max-width: 33.333333%;
 	        
         &:nth-child(odd) {
             background: #f1f1f1;
