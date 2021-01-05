@@ -19,12 +19,14 @@
         <h1 class="archive-title"><?php echo single_cat_title( '', false ); ?></h1>
     </header><!-- .archive-header -->
 
-    <?php
-    while ( have_posts() ) :
-        the_post();
-        ?>
-        <?php get_template_part( 'template-parts/content' ); ?>
-    <?php endwhile; ?>
+    <div class="category-posts-list">
+        <?php
+        while ( have_posts() ) :
+            the_post();
+            ?>
+            <?php get_template_part( 'template-parts/content', 'category' ); ?>
+        <?php endwhile; ?>
+    </div>
 
     <?php emdotnet_theme_paging_nav(); // Previous/next post navigation. ?>
 
