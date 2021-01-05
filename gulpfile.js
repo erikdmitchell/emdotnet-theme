@@ -12,6 +12,7 @@ var buildInclude = [
         '**/*.woff',
         '**/*.woff2',
         '**/*.png',
+        '**/*.jpg',
         
         // include specific files and folders
         'screenshot.png',
