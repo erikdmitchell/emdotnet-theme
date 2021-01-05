@@ -36,7 +36,7 @@ Coming soon...
 
 = 1.0.1 =
 
- * Fixed screenshot and blog posts layout.
+ * Fixed screenshot, blog posts layout, category layout and tag layout.
 
 = 1.0.0 =
 
