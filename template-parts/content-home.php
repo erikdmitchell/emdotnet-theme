@@ -37,24 +37,5 @@
             );
             ?>
     </div><!-- .entry-content -->
-
-    <div class="entry-meta">
-        <?php if ( has_tag() ) : ?>
-            <div class="tags-list">
-                <div class="tags-title">Tags</div>
-                
-                <?php the_tags( '<div class="tag-links">', ' ', '</div>' ); ?>
-            </div>
-        <?php endif; ?>
-        <?php if ( emdotnet_has_categories( 'Uncategorized' ) ) : ?>
-            <div class="categories-list">
-                <div class="categories-title">Categories</div>
-            
-                <div class="categories-link">
-                    <?php emdotnet_post_categories( ' ', 1 ); ?>
-                </div>
-            </div>
-        <?php endif; ?>
-    </div>
                         
 </article><!-- #post-## -->
