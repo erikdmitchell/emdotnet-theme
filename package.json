@@ -1,10 +1,10 @@
 {
   "name": "emdotnet-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "EMdotNet theme.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Gulp Standards\" && exit 1"
+    "test": "echo \"EMdotNet theme\" && exit 1"
   },
   "repository": {
     "type": "git",
